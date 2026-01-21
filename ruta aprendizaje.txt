@@ -1,0 +1,54 @@
+
+🧭 FUNDAMENTOS DE PHP — RUTA AJUSTADA (CORRECTA)
+
+Este será el orden definitivo, sin saltos:
+
+🔹 BLOQUE 1 — BASE DEL LENGUAJE
+
+Qué es PHP y cómo se ejecuta
+
+Sintaxis básica
+
+Variables
+
+Constantes ✅ (faltaba, bien visto)
+
+Tipos de datos
+
+Concatenación
+
+Comentarios
+
+🔹 BLOQUE 2 — LÓGICA
+
+Condicionales (if, else, elseif)
+
+Operadores lógicos
+
+Switch
+
+🔹 BLOQUE 3 — ESTRUCTURAS DE DATOS
+
+Arrays
+
+Arrays asociativos
+
+Recorridos (foreach)
+
+🔹 BLOQUE 4 — FUNCIONES
+
+Funciones
+
+Parámetros y retorno
+
+Scope (ámbito)
+
+🔹 BLOQUE 5 — BASE PROFESIONAL
+
+Includes / require
+
+Buenas prácticas
+
+Errores comunes
+
+👉 Luego pasamos a POO, arquitectura y WordPress.

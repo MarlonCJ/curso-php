@@ -1,0 +1,39 @@
+🔹 1. FUNDAMENTOS REALES DE PHP
+
+Antes de escribir código, entiende esto:
+
+❓ ¿Qué es PHP?
+
+PHP es un lenguaje de programación del lado del servidor.
+
+📌 Para qué sirve:
+
+Procesar formularios
+
+Conectar con bases de datos
+
+Generar HTML dinámico
+
+Crear sistemas (login, paneles, plugins, APIs)
+
+📌 Por qué es importante:
+
+WordPress está escrito en PHP
+
+El 80% de errores de plugins vienen de malos fundamentos en PHP
+
+🔹 1.1 Cómo se ejecuta PHP (concepto CLAVE)
+
+PHP NO corre en el navegador.
+
+Flujo real:
+
+Usuario → Navegador → Servidor → PHP → HTML → Navegador
+
+👉 El navegador solo recibe HTML, nunca ve el PHP.
+
+📌 Esto explica:
+
+Por qué el PHP es más seguro que JS
+
+Por qué los errores PHP rompen el sitio
