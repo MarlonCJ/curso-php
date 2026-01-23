@@ -51,4 +51,152 @@ Buenas prácticas
 
 Errores comunes
 
-👉 Luego pasamos a POO, arquitectura y WordPress.
+🚀 A PARTIR DE AQUÍ EMPIEZA EL NIVEL AVANZADO
+🔹 BLOQUE 6 — CONTROL DE ERRORES Y DEPURACIÓN
+
+Objetivo: Saber por qué falla el código
+
+Errores comunes en PHP
+
+error_reporting
+
+var_dump() vs print_r()
+
+Errores fatales, warnings y notices
+
+Depuración profesional
+
+🔹 BLOQUE 7 — PROGRAMACIÓN ORIENTADA A OBJETOS (POO)
+
+Objetivo: Pensar como PHP moderno y WordPress
+
+Qué es una clase
+
+Propiedades y métodos
+
+public, private, protected
+
+Constructor
+
+Instancias
+
+this
+
+📌 Aquí empieza el PHP serio
+
+🔹 BLOQUE 8 — POO AVANZADA
+
+Objetivo: Arquitectura sólida
+
+Herencia
+
+Encapsulación
+
+Polimorfismo
+
+Interfaces
+
+Clases abstractas
+
+Namespaces
+
+Autoload (spl_autoload_register)
+
+🔹 BLOQUE 9 — MANEJO DE DATOS
+
+Objetivo: Trabajar con información real
+
+Formularios (GET / POST)
+
+Validación y sanitización
+
+Sessions
+
+Cookies
+
+Seguridad básica
+
+🔹 BLOQUE 10 — BASE DE DATOS (MYSQL + PHP)
+
+Objetivo: Persistencia de datos
+
+MySQL básico
+
+Conexión con PDO
+
+Consultas seguras
+
+CRUD completo
+
+Prevención SQL Injection
+
+🌍 TRANSICIÓN A WORDPRESS (NIVEL REAL)
+🔹 BLOQUE 11 — WORDPRESS DESDE DENTRO
+
+Objetivo: Entender cómo funciona WordPress internamente
+
+Estructura de WordPress
+
+Ciclo de carga
+
+wp-config.php
+
+Roles y capacidades
+
+Base de datos de WordPress
+
+🔹 BLOQUE 12 — PLUGINS DESDE CERO
+
+Objetivo: Crear plugins profesionales
+
+Estructura de un plugin
+
+Hooks (actions y filters)
+
+Activación / desactivación
+
+Organización por carpetas
+
+Seguridad en plugins
+
+🔹 BLOQUE 13 — PLUGINS PERSONALIZADOS AVANZADOS
+
+Objetivo: Nivel profesional real
+
+Plugins orientados a POO
+
+Custom Post Types
+
+Metaboxes
+
+Settings API
+
+AJAX en WordPress
+
+REST API básica
+
+🔹 BLOQUE 14 — SEGURIDAD Y BUENAS PRÁCTICAS
+
+Objetivo: Código confiable
+
+Nonces
+
+Escapado de datos
+
+Roles y permisos
+
+Buenas prácticas WordPress
+
+Código mantenible
+
+🔹 BLOQUE 15 — PROYECTOS REALES
+
+Objetivo: Convertirte en experto
+
+Plugin CRUD completo
+
+Plugin con panel admin
+
+Plugin orientado a negocio
+
+Preparación para clientes / freelance
