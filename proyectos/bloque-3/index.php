@@ -65,8 +65,8 @@ $usuarios = [
 // ===SALIDAS===
 
 echo '<!DOCTYPE html>';
+echo '<html lang="es">';
 echo '<head>';
-echo '  <meta lang="es">';
 echo '  <meta charset="UTF-8">';
 echo '  <title>Listado de Usuarios</title>';
 echo '</head>';
@@ -74,9 +74,9 @@ echo '<body>';
 echo '<h1>Listado de Usuarios</h1>';
 foreach($usuarios as $usuario){
     echo 'Nombre: '. $usuario['nombre'] . '<br>';
-    echo 'Nombre: '. $usuario['email'] . '<br>';
-    echo 'Nombre: '. $usuario['edad'] . '<br>';
-    echo 'Nombre: '. $usuario['estado'] . '<br>';
+    echo 'Email: '. $usuario['email'] . '<br>';
+    echo 'Edad: '. $usuario['edad'] . '<br>';
+    echo 'Estado: '. $usuario['estado'] . '<br>';
     echo '----------------------------<br>';
 }
 echo '</body>';
