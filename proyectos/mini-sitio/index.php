@@ -1,14 +1,14 @@
 <?php
 require_once 'config/config.php';
 require_once 'data/usuarios.php';
+require_once 'functions/helpers.php';
 
 // -------------------------------
-// BLOQUE 3 - ARRAYS
+// BLOQUE 4 - FUNCIONES
 // -------------------------------
 
-// Mensaje informativo
 $tituloSeccion = 'Listado de Usuarios';
-$descripcion  = 'Usuarios cargados desde un array en PHP.';
+$descripcion  = 'Listado generado usando funciones reutilizables.';
 ?>
 
 <?php require_once 'templates/header.php'; ?>
@@ -22,8 +22,8 @@ $descripcion  = 'Usuarios cargados desde un array en PHP.';
             <article>
                 <p><strong>Nombre:</strong> <?= $usuario['nombre'] ?></p>
                 <p><strong>Email:</strong> <?= $usuario['email'] ?></p>
-                <p><strong>Edad:</strong> <?= $usuario['edad'] ?></p>
-                <p><strong>Estado:</strong> <?= $usuario['estado'] ?></p>
+                <p><strong>Edad:</strong> <?= formatearEdad($usuario['edad']) ?></p>
+                <p><strong>Estado:</strong> <?= obtenerEstadoUsuario($usuario['estado']) ?></p>
                 <hr>
             </article>
         <?php endforeach; ?>
