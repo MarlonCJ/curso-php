@@ -1,14 +1,12 @@
 <?php
-require_once 'config/config.php';
-require_once 'data/usuarios.php';
-require_once 'functions/helpers.php';
+require_once 'bootstrap.php';
 
 // -------------------------------
-// BLOQUE 4 - FUNCIONES
+// BLOQUE 5 - ORQUESTACIÓN
 // -------------------------------
 
 $tituloSeccion = 'Listado de Usuarios';
-$descripcion  = 'Listado generado usando funciones reutilizables.';
+$descripcion  = 'Proyecto estructurado usando includes y bootstrap.';
 ?>
 
 <?php require_once 'templates/header.php'; ?>
@@ -32,3 +30,4 @@ $descripcion  = 'Listado generado usando funciones reutilizables.';
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
+
