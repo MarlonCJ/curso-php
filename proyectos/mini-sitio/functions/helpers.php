@@ -1,12 +1,9 @@
 <?php
 // ===============================
-// Funciones auxiliares del sitio
-// BLOQUE 4
+// Helpers del sistema
+// BLOQUES 4–6
 // ===============================
 
-/**
- * Devuelve un texto de estado formateado
- */
 function obtenerEstadoUsuario($estado)
 {
     return $estado === 'Activo'
@@ -14,10 +11,21 @@ function obtenerEstadoUsuario($estado)
         : '🔴 Inactivo';
 }
 
-/**
- * Devuelve la edad con formato
- */
 function formatearEdad($edad)
 {
     return $edad . ' años';
+}
+
+/**
+ * Helper de depuración (solo DEV)
+ */
+function debug($variable)
+{
+    if (APP_ENV !== 'development') {
+        return;
+    }
+
+    echo '<pre style="background:#111;color:#0f0;padding:10px;">';
+    var_dump($variable);
+    echo '</pre>';
 }

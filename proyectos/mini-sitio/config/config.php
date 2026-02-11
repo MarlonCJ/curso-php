@@ -1,17 +1,17 @@
 <?php
+// ===============================
+// Configuración global del sitio
+// BLOQUES 1–6
+// ===============================
 
-// ==============================
-// Configuracion base del sitio
-// BLOQUE 1
-// ==============================
+// Entorno de la aplicación
+define('APP_ENV', 'development'); // development | production
 
-// Constante del sitio
-
+// Configuración general
 define('SITE_NAME', 'Mini Sitio PHP Profesional');
-define('SITE_AUTHOR', 'Marlon');
+define('SITE_AUTHOR', 'Marlonete');
 define('SITE_YEAR', 2026);
 
-// Configuracion de horario del sitio
-
+// Horario del sitio
 define('SITE_OPEN_HOUR', 8);
-define('SITE_CLOSE_HOUR',18);
+define('SITE_CLOSE_HOUR', 18);
