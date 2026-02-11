@@ -1,25 +1,15 @@
 <?php
-// ===============================
-// Helpers del sistema
-// BLOQUES 4–6
-// ===============================
-
-function obtenerEstadoUsuario($estado)
+function obtenerEstadoUsuario(bool $activo): string
 {
-    return $estado === 'Activo'
-        ? '🟢 Activo'
-        : '🔴 Inactivo';
+    return $activo ? '🟢 Activo' : '🔴 Inactivo';
 }
 
-function formatearEdad($edad)
+function formatearEdad(int $edad): string
 {
     return $edad . ' años';
 }
 
-/**
- * Helper de depuración (solo DEV)
- */
-function debug($variable)
+function debug($variable): void
 {
     if (APP_ENV !== 'development') {
         return;

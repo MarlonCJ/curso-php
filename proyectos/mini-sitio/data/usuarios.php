@@ -1,9 +1,4 @@
 <?php
-// ===============================
-// Datos simulados como objetos
-// BLOQUE 7
-// ===============================
-
 require_once __DIR__ . '/../src/Usuario.php';
 
 $usuarios = [
