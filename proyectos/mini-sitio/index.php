@@ -1,12 +1,8 @@
 <?php
 require_once 'bootstrap.php';
 
-// -------------------------------
-// BLOQUE 5 - ORQUESTACIÓN
-// -------------------------------
-
-$tituloSeccion = 'Listado de Usuarios';
-$descripcion  = 'Proyecto estructurado usando includes y bootstrap.';
+$tituloSeccion = 'Listado de Usuarios (POO)';
+$descripcion  = 'Usuarios modelados como objetos PHP.';
 ?>
 
 <?php require_once 'templates/header.php'; ?>
@@ -18,10 +14,10 @@ $descripcion  = 'Proyecto estructurado usando includes y bootstrap.';
 
         <?php foreach ($usuarios as $usuario): ?>
             <article>
-                <p><strong>Nombre:</strong> <?= $usuario['nombre'] ?></p>
-                <p><strong>Email:</strong> <?= $usuario['email'] ?></p>
-                <p><strong>Edad:</strong> <?= formatearEdad($usuario['edad']) ?></p>
-                <p><strong>Estado:</strong> <?= obtenerEstadoUsuario($usuario['estado']) ?></p>
+                <p><strong>Nombre:</strong> <?= $usuario->getNombre() ?></p>
+                <p><strong>Email:</strong> <?= $usuario->getEmail() ?></p>
+                <p><strong>Edad:</strong> <?= formatearEdad($usuario->getEdad()) ?></p>
+                <p><strong>Estado:</strong> <?= obtenerEstadoUsuario($usuario->getEstado()) ?></p>
                 <hr>
             </article>
         <?php endforeach; ?>
@@ -30,4 +26,3 @@ $descripcion  = 'Proyecto estructurado usando includes y bootstrap.';
 </main>
 
 <?php require_once 'templates/footer.php'; ?>
-

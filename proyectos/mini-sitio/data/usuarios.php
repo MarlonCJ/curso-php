@@ -1,26 +1,13 @@
 <?php
 // ===============================
-// Datos simulados de usuarios
-// BLOQUE 3
+// Datos simulados como objetos
+// BLOQUE 7
 // ===============================
 
+require_once __DIR__ . '/../src/Usuario.php';
+
 $usuarios = [
-    [
-        'nombre' => 'Juan Pérez',
-        'email'  => 'juan@email.com',
-        'edad'   => 28,
-        'estado' => 'Activo',
-    ],
-    [
-        'nombre' => 'Ana Gómez',
-        'email'  => 'ana@email.com',
-        'edad'   => 17,
-        'estado' => 'Inactivo',
-    ],
-    [
-        'nombre' => 'Carlos Ruiz',
-        'email'  => 'carlos@email.com',
-        'edad'   => 35,
-        'estado' => 'Activo',
-    ],
+    new Usuario('Juan Pérez', 'juan@email.com', 28, 'Activo'),
+    new Usuario('Ana Gómez', 'ana@email.com', 17, 'Inactivo'),
+    new Usuario('Carlos Ruiz', 'carlos@email.com', 35, 'Activo'),
 ];
