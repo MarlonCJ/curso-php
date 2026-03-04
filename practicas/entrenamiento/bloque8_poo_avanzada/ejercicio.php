@@ -1,5 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
+error_reporting(E_ALL);
+ini_set('display_errors',1);
+
 // 🧠 ENTRENAMIENTO — BLOQUE 8 (POO AVANZADA)
 
 // ⚠️ Reglas activas:
@@ -118,15 +123,58 @@ echo $persona -> obtenerSaldo();
 
 // Luego crea una clase EmpleadoTiempoCompleto que herede de Empleado y sobrescriba el método para retornar 2000.
 
+class Empleado {
 
+    public function calcularSalario(){
+        return 1000;
+    }
+}
 
+class EmpleadoTiempoCompleto extends Empleado {
 
+    public function calcularSalario(){
+        return 2000;
+    }
+
+}
+
+$carlos = new Empleado();
+$jose = new EmpleadoTiempoCompleto();
+
+echo $carlos -> calcularSalario().PHP_EOL;
+echo $jose -> calcularSalario().PHP_EOL;
 
 // 4️⃣ Uso de parent::
 
 // Crea una clase Persona con método saludar() que imprima "Hola".
 
 // Crea una clase Estudiante que herede de Persona y sobrescriba saludar(), pero que también ejecute el método original usando parent::.
+
+class Persona {
+
+    public function saludar(){
+        return 'Hola';
+    }
+}
+
+class Estudiante extends Persona {
+
+    public string $nombre;
+
+    public function __construct(string $nombre){
+        $this -> nombre = $nombre;
+    }
+
+    public function saludar(){
+        return parent::saludar()." ". $this->nombre;
+    }
+}
+
+
+$usuario = new Estudiante('Marlon');
+
+echo $usuario -> saludar().PHP_EOL;
+
 
 // 5️⃣ Clase abstracta
 
@@ -136,11 +184,85 @@ echo $persona -> obtenerSaldo();
 
 // Luego crea una clase Cuadrado que implemente ese método.
 
+abstract class Figura {
+    abstract public function calcularArea() : float;
+}
+
+class AreaCuadrado extends Figura{
+
+    private $lado;
+
+    public function __construct($lado){
+        $this -> lado = $lado;
+    }
+
+    public function calcularArea() : float {
+        return $this->lado * $this->lado;
+    }
+}
+
+class AreaRectangulo extends Figura {
+
+    private $base;
+    private $altura;
+
+    public function __construct($base, $altura){
+        $this->base  = $base;
+        $this->altura = $altura;
+    }
+
+    public function calcularArea(): float{
+        return $this->base * $this->altura;
+    }
+}
+
+class AreaCirculo extends Figura {
+    private const PI = 3.1416;
+    private $radio;
+
+    public function __construct($radio){
+        $this->radio = $radio;
+    }
+
+    public function calcularArea(): float{
+
+        return self:: PI * ($this->radio * $this->radio);
+    }
+}
+
+
+
+$cuadrado = new AreaCuadrado(40);
+echo "Area del Cuadrado: ".  $cuadrado -> calcularArea().PHP_EOL;
+
+$rectangulo = new AreaRectangulo(200, 300);
+echo "Area del Rectangulo: ". $rectangulo->calcularArea().PHP_EOL;
+
+$circulo = new AreaCirculo(20);
+echo "Area del Circulo: " . $circulo->calcularArea().PHP_EOL;
+
 // 6️⃣ Interfaces
 
 // Define una interfaz Pagable con método procesarPago().
 
 // Crea una clase PagoTarjeta que implemente esa interfaz.
+
+interface Pagable {
+    public function procesarPago(float $pago):string;
+}
+
+class PagoTarjeta implements Pagable{
+
+    public function procesarPago(float $pago):string
+    {
+        return "Pago realizado valor: " . $pago;
+    }
+}
+
+$pagar = new PagoTarjeta();
+
+echo $pagar->procesarPago(1000).PHP_EOL;
+
 
 // 7️⃣ Polimorfismo real
 
@@ -154,6 +276,48 @@ echo $persona -> obtenerSaldo();
 
 // Luego crea un array con objetos de ambas clases y recórrelo ejecutando el método.
 
+interface Animal {
+    public function hacerSonido():string;
+}
+
+class Perro implements Animal{
+
+    private string $nombre;
+
+    public function __construct(string $nombre)
+    {
+        $this->nombre = $nombre;
+    }
+
+    public function hacerSonido(): string{
+        return "El perro {$this->nombre} dice: Gua";
+    }
+}
+
+class Gato implements Animal{
+
+    private string $nombre;
+
+    public function __construct(string $nombre)
+    {
+        $this->nombre = $nombre;
+    }
+
+    public function hacerSonido(): string{
+        return "El gato {$this->nombre} dice Miau";
+    }
+}
+
+$animales = [
+    new Perro('Matias'),
+    new Gato('Paquito')
+];
+
+foreach($animales as $animal){
+    echo $animal->hacerSonido().PHP_EOL;
+}
+
+
 // 8️⃣ Namespaces
 
 // Organiza dos clases con el mismo nombre Usuario pero en diferentes namespaces:
@@ -164,11 +328,17 @@ echo $persona -> obtenerSaldo();
 
 // Instancia ambas correctamente fuera del namespace.
 
+
+
+
 // 9️⃣ Autoload manual
 
 // Implementa una función usando spl_autoload_register() que cargue automáticamente clases desde una carpeta /clases.
 
 // Simula al menos dos clases separadas.
+
+
+
 
 // 🔟 Ejercicio integrador avanzado
 
