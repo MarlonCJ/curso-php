@@ -65,7 +65,7 @@ try {
     error_log($e->getMessage());
     echo "Ocurrió un error. Intente nuevamente.";
 
-}
+} 
 
 
 
