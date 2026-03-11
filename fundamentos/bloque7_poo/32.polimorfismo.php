@@ -1,173 +1,315 @@
 <?php
 
-/*
-POLIMORFISMO + INTERFACES EN PHP (CLAVE EN WORDPRESS)
+// POLIMORFISMO
 
-Este bloque es CRÍTICO.
-WordPress usa interfaces y polimorfismo en todo su core.
+// 📚 CLASE — POLIMORFISMO EN POO
 
-1️⃣ ¿QUÉ ES POLIMORFISMO? (SIN RODEOS)
+// Primero veremos:
 
-👉 Objetos distintos pueden responder al mismo método, aunque internamente hagan cosas diferentes.
+// 1️⃣ Qué es polimorfismo
+// 2️⃣ Cómo funciona internamente
+// 3️⃣ Ejemplo simple
+// 4️⃣ Ejemplo realista
+// 5️⃣ Ejemplo profesional (como en frameworks)
+// 6️⃣ Buenas prácticas
 
-Ejemplo mental:
+// 1️⃣ Qué significa Polimorfismo
 
-Un Producto
+// La palabra polimorfismo significa:
 
-Un ProductoDigital
+// poly = muchos
+// morph = formas
 
-Un ProductoFisico
+// En programación significa:
 
-Todos pueden:
+// Un mismo método puede comportarse de forma diferente dependiendo del objeto.
 
-$producto->getPrecio();
+// 2️⃣ Idea simple
+
+// Imagina que todos los objetos tienen un método:
+
+// hacerSonido()
+
+// Pero cada animal responde diferente.
+
+// Animal
+//  └ hacerSonido()
+
+//         ↑
+//    ┌─────────┐
+// Perro      Gato
+//  └ladra     └maulla
+
+// El sistema solo ejecuta:
+
+// $animal->hacerSonido();
+
+// Pero el resultado cambia según el objeto.
+
+// 3️⃣ Ejemplo básico
+
+// Código completo:
 
 
-👉 No importa qué tipo exacto sea.
-
-2️⃣ EJEMPLO SIMPLE DE POLIMORFISMO
-
-*/
-
-// class Producto {
-//     public function getTipo() {
-//         return 'Producto general';
+// class Animal
+// {
+//     public function hacerSonido(): string
+//     {
+//         return "El animal hace un sonido";
 //     }
 // }
 
-// class ProductoDigital extends Producto {
-//     public function getTipo() {
-//         return 'Producto digital';
+// class Perro extends Animal
+// {
+//     public function hacerSonido(): string
+//     {
+//         return "El perro ladra";
 //     }
 // }
 
-// class ProductoFisico extends Producto {
-//     public function getTipo() {
-//         return 'Producto físico';
+// class Gato extends Animal
+// {
+//     public function hacerSonido(): string
+//     {
+//         return "El gato maulla";
 //     }
 // }
 
-
-// uso
-
-// $items = [
-//     new Producto(),
-//     new ProductoDigital(),
-//     new ProductoFisico()
+// $animales = [
+//     new Perro(),
+//     new Gato()
 // ];
 
-// foreach ($items as $item) {
-//     echo $item->getTipo() . '<br>';
+// foreach ($animales as $animal) {
+//     echo $animal->hacerSonido() . PHP_EOL;
 // }
 
 
-/*
-🔥 Mismo método
-🔥 Diferente comportamiento
-👉 Eso es polimorfismo
+// Resultado
+// El perro ladra
+// El gato maulla
+// 4️⃣ Qué ocurre internamente
 
-3️⃣ PROBLEMA SIN INTERFACES
+// Cuando el código ejecuta:
 
-Si no hay reglas claras:
+// $animal->hacerSonido();
 
-Cada clase puede llamarse distinto
+// PHP revisa el tipo real del objeto.
 
-Código frágil
+// Objeto actual → Perro
 
-Difícil de mantener
+// Entonces ejecuta:
 
-👉 Aquí entran las interfaces.
+// Perro::hacerSonido()
 
-4️⃣ ¿QUÉ ES UNA INTERFACE?
+// Luego:
 
-📌 Una interface define qué métodos DEBE tener una clase.
+// Objeto actual → Gato
 
-👉 No implementa lógica
-👉 Solo define el contrato
+// Ejecuta:
 
-*/
+// Gato::hacerSonido()
+// 5️⃣ Ejemplo más realista
 
-interface Vendible {
+// Sistema de empleados.
 
-    public function getPrecio();
+// class Empleado
+// {
+//     public function calcularPago(): int
+//     {
+//         return 0;
+//     }
+// }
+
+// class EmpleadoTiempoCompleto extends Empleado
+// {
+//     public function calcularPago(): int
+//     {
+//         return 2000;
+//     }
+// }
+
+// class EmpleadoFreelance extends Empleado
+// {
+//     public function calcularPago(): int
+//     {
+//         return 1000;
+//     }
+// }
+
+// $empleados = [
+//     new EmpleadoTiempoCompleto(),
+//     new EmpleadoFreelance()
+// ];
+
+// foreach ($empleados as $empleado) {
+//     echo $empleado->calcularPago() . PHP_EOL;
+// }
+
+// Resultado
+// 2000
+// 1000
+
+// El sistema solo llama:
+
+// $empleado->calcularPago();
+
+// Pero cada objeto responde diferente.
+
+// 6️⃣ Esto es exactamente lo que hacen los frameworks
+
+// Ejemplo conceptual de un sistema de pagos:
+
+// Pago
+//  └ procesar()
+
+//         ↑
+//    ┌───────────────┐
+// Paypal         Stripe
+//  └procesar()     └procesar()
+
+// El sistema solo hace:
+
+// $pago->procesar();
+
+// Cada gateway implementa su lógica.
+
+// 7️⃣ Ventaja del Polimorfismo
+
+// Permite escribir código más flexible y escalable.
+
+// Sin polimorfismo:
+
+// if($tipo == "paypal") { ... }
+
+// if($tipo == "stripe") { ... }
+
+// if($tipo == "mercadopago") { ... }
+
+// Con polimorfismo:
+
+// $pago->procesar();
+
+// El objeto decide qué hacer.
+
+// 8️⃣ Regla mental importante
+// Mismo método
+// Objetos diferentes
+// Comportamientos diferentes
+
+// Eso es polimorfismo.
+
+// 9️⃣ Polimorfismo + Herencia
+
+// Normalmente el polimorfismo aparece junto con:
+
+// Herencia
+
+// Method Overriding
+
+// Ejemplo:
+
+// Vehiculo
+//  └ mover()
+
+//         ↑
+//    ┌─────────┐
+// Carro      Avion
+//  └mover()   └mover()
+
+// 🧠 Ejercicio para entrenar
+
+// Crea este sistema:
+
+// Clase padre
+// Figura
+
+// Método:
+
+// calcularArea()
+
+// Debe devolver:
+
+// 0
+// Clase hija 1
+// Rectangulo
+
+// Propiedades:
+
+// ancho
+// alto
+
+// Sobrescribir:
+
+// calcularArea()
+// Clase hija 2
+// Circulo
+
+// Propiedad:
+
+// radio
+
+// Sobrescribir:
+
+// calcularArea()
+// Uso esperado
+// $figuras = [
+//     new Rectangulo(10,5),
+//     new Circulo(7)
+// ];
+
+// foreach($figuras as $figura){
+//     echo $figura->calcularArea() . PHP_EOL;
+// }
+
+
+
+class Figura {
+
+    public function calcularArea():float{
+        return 0;
+    }
 
 }
 
-// IMPLEMENTAR LA INTERFACE
 
+class Rectangulo extends Figura{
 
-class ProductoDigital implements Vendible {
+    private float $ancho;
+    private float $alto;
 
-    private $precio;
-
-    public function __construct($precio) {
-        $this->precio = $precio;
+    public function __construct(float $ancho, float $alto)
+    {
+        $this->ancho = $ancho;
+        $this->alto = $alto;
     }
 
-    public function getPrecio() {
-        return $this->precio;
+    public function calcularArea():float{
+
+        return $this->ancho * $this->alto;
     }
+
 }
 
-class Servicio implements Vendible {
+class Circulo extends Figura{
 
-    private $precio;
+    private float $radio;
 
-    public function __construct($precio) {
-        $this->precio = $precio;
+    public function __construct(float $radio){
+        $this->radio = $radio;
     }
 
-    public function getPrecio() {
-        return $this->precio;
+    public function calcularArea():float{
+        return pi() * ($this->radio ** 2); 
     }
+
 }
 
+$figuras =[
+    new Rectangulo(200,100),
+    new Circulo(60)
+];
 
-// 📌 Clases distintas
-// 📌 Mismo método obligatorio
-
-// 7️⃣ POLIMORFISMO CON INTERFACES (NIVEL PRO)
-
-function mostrarPrecio(Vendible $item) {
-    echo $item->getPrecio();
+foreach($figuras as $figura){
+    echo $figura->calcularArea().PHP_EOL;
 }
-
-mostrarPrecio(new ProductoDigital(50000));
-mostrarPrecio(new Servicio(80000));
-
-// 🔥 PHP garantiza que getPrecio() existe
-// 🔥 Código seguro
-// 🔥 Diseño profesional
-
-// 👉 Esto es arquitectura limpia
-
-// 🧠 LO QUE ACABAS DE APRENDER
-
-// ✔ Polimorfismo real
-// ✔ Interfaces
-// ✔ implements
-// ✔ Tipado por contrato
-// ✔ Código escalable
-
-// 👉 Esto ya es nivel avanzado de PHP.
-
-/*
-✅ RESPUESTA HONESTA A TU PREGUNTA
-
-“¿Para qué sirve todo esto?”
-
-Sirve para:
-
-No romper el código cuando crece
-
-Permitir que otros programadores extiendan tu sistema
-
-Construir plugins profesionales
-
-Escribir código que escala
-
-❌ No sirve para scripts pequeños
-❌ No sirve para ejercicios simples
-✔ Sirve para sistemas reales
-
-*/
