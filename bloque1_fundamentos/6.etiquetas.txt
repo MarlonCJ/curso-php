@@ -1,0 +1,96 @@
+
+
+<!-- 🧩 TEMA 5 — ETIQUETAS PHP (<?php ?>)
+
+🎯 EXPLICACIÓN PROFUNDA (NIVEL PROFESIONAL)
+
+Las etiquetas PHP son el mecanismo de delimitación entre:
+
+    Código PHP (backend)
+    Contenido HTML (frontend)
+    🔥 CONCEPTO CLAVE
+
+El servidor necesita saber qué parte del archivo debe interpretar como PHP y cuál debe enviar directamente al navegador.
+
+
+⚙️ FORMAS DE USAR ETIQUETAS
+
+✔️ Forma estándar (OBLIGATORIA) -->
+
+<?php
+
+    echo "Hola";
+
+?>
+
+<!-- ✔️ Forma corta de impresión (válida en producción moderna) -->
+
+<?= "Hola" ?>
+
+<!-- Esto es equivalente a: -->
+
+<?php echo "Hola"; ?>
+
+<!-- ⚙️ CÓDIGO COMPLETO FUNCIONAL -->
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Ejemplo PHP</title>
+    </head>
+    <body>
+
+    <h1>Bienvenido</h1>
+
+<?php
+    $nombre = "Marlonete";
+    echo "<p>Hola " . $nombre . "</p>";
+?>
+
+    </body>
+    </html>
+
+<!-- 🔍 EXPLICACIÓN TÉCNICA
+
+    Todo lo fuera de <?php ?> → se envía como HTML
+    Todo lo dentro → se ejecuta en el servidor
+    PHP puede inyectar contenido dinámico dentro del HTML
+
+🧠 PROCESAMIENTO REAL
+
+    El servidor transforma esto en: -->
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Ejemplo PHP</title>
+    </head>
+    <body>
+
+        <h1>Bienvenido</h1>
+        <p>Hola Marlonete</p>
+    </body>
+    </html>
+
+⚠️ PUNTO CRÍTICO
+
+PHP no reemplaza HTML, lo genera dinámicamente.
+
+🧱 BUENAS PRÁCTICAS
+
+Usar siempre (evitar short tags antiguas <?)
+No cerrar ?> en archivos solo PHP
+Mantener lógica fuera del HTML cuando crece el proyecto
+Evitar mezclar demasiado PHP con HTML (spaghetti code)
+
+❌ ERRORES COMUNES
+
+    Usar <? (puede fallar en servidores)
+    No cerrar correctamente bloques en archivos mixtos
+    Mezclar demasiada lógica dentro del HTML
+    Imprimir HTML mal estructurado desde PHP
+
+🧠 CONCEPTO CLAVE
+
+    PHP entra y sale del HTML usando etiquetas.
+    Eso define qué se ejecuta y qué se envía directamente.
