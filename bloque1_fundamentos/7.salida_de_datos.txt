@@ -1,0 +1,88 @@
+
+🧩 TEMA 6 — SALIDA DE DATOS (echo vs print)
+
+🎯 EXPLICACIÓN PROFUNDA (NIVEL PROFESIONAL)
+
+En PHP, la salida de datos no es trivial.
+
+Es el punto donde:
+
+El resultado del backend se convierte en contenido visible para el usuario.
+
+🔥 DIFERENCIA REAL
+
+echo
+
+Más rápido
+Puede imprimir múltiples valores
+No retorna valor
+
+print
+
+Más lento
+Solo imprime un valor
+Retorna 1 (puede usarse en expresiones)
+
+⚙️ CÓDIGO COMPLETO FUNCIONAL
+
+<?php
+
+$nombre = "Marlonete";
+
+echo "Hola " . $nombre;
+echo "<br>";
+
+print "Bienvenido al sistema";
+
+?>
+
+🔍 EXPLICACIÓN TÉCNICA
+
+🔹 echo
+
+echo "Hola", " ", "Mundo";
+
+✔️ Permite múltiples argumentos
+
+🔹 print
+
+print "Hola Mundo";
+
+❌ Solo un argumento
+
+✔️ Retorna valor:
+
+$resultado = print "Hola";
+
+⚠️ PUNTO CRÍTICO
+
+En entornos reales:
+
+Se usa echo en el 99% de los casos
+
+🧠 ¿QUÉ PASA INTERNAMENTE?
+
+Ambos envían datos al:
+
+OUTPUT BUFFER
+
+Luego el servidor lo envía al navegador.
+
+🧱 BUENAS PRÁCTICAS
+
+Usar echo por rendimiento y claridad
+No abusar de múltiples echo desordenados
+Mantener control sobre lo que se imprime
+Evitar imprimir datos sin validar
+
+❌ ERRORES COMUNES
+
+Usar print sin entender su retorno
+Concatenar incorrectamente
+Imprimir variables no definidas
+Mezclar HTML mal estructurado
+
+🧠 CONCEPTO CLAVE
+
+PHP no “muestra” cosas.
+Las envía como respuesta al cliente.
