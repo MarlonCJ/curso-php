@@ -1,0 +1,97 @@
+
+🧩 TEMA 7 — COMENTARIOS EN PHP
+
+🎯 EXPLICACIÓN PROFUNDA (NIVEL PROFESIONAL)
+
+Los comentarios no son “texto ignorado”.
+
+En un entorno profesional:
+
+Son una herramienta de documentación, mantenimiento y comunicación entre desarrolladores.
+
+🔥 TIPOS DE COMENTARIOS EN PHP
+1. Comentario de una línea (//)
+
+?php
+
+// Este es un comentario
+
+echo "Hola";
+
+?>
+
+2. Comentario de una línea (#)
+
+<?php
+
+# También es un comentario válido
+
+echo "Hola";
+
+?>
+
+3. Comentario multilínea (/* */)
+
+<?php
+
+/*
+Este es un comentario
+de múltiples líneas
+*/
+
+echo "Hola";
+
+?>
+
+⚙️ CÓDIGO COMPLETO FUNCIONAL
+
+<?php
+
+// Definición de variables
+
+$nombre = "Marlonete"; // Nombre del usuario
+$edad = 25;
+
+/*
+Se imprime información
+del usuario en pantalla
+*/
+
+echo "Nombre: " . $nombre;
+echo "<br>";
+echo "Edad: " . $edad;
+
+?>
+
+🔍 EXPLICACIÓN TÉCNICA
+
+El intérprete PHP ignora completamente los comentarios
+No afectan rendimiento de ejecución (mínimo impacto)
+No llegan al navegador
+
+⚠️ PUNTO CRÍTICO
+
+Un comentario mal usado puede:
+
+Confundir al equipo
+Ocultar errores
+Generar deuda técnica
+
+🧱 BUENAS PRÁCTICAS
+
+Explicar por qué, no qué hace el código
+Usar comentarios para lógica compleja
+Mantener comentarios actualizados
+No sobrecomentar código obvio
+
+❌ ERRORES COMUNES
+
+Comentar código innecesario
+Dejar código muerto comentado
+Usar comentarios desactualizados
+Explicar lo evidente
+
+🧠 CONCEPTO CLAVE
+
+El código se escribe para máquinas,
+los comentarios para humanos.
