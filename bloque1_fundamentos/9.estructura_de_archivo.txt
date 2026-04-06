@@ -1,0 +1,116 @@
+
+🧩 TEMA 8 — ESTRUCTURA DE UN ARCHIVO PHP
+
+🎯 EXPLICACIÓN PROFUNDA (NIVEL PROFESIONAL)
+
+Un archivo PHP no es solo código.
+
+Es una unidad de ejecución dentro del servidor, donde conviven:
+
+Lógica (PHP)
+Presentación (HTML)
+Flujo de salida
+
+🔥 CONCEPTO CLAVE
+
+Un archivo PHP es procesado completamente en el servidor antes de enviarse al cliente.
+
+⚙️ ESTRUCTURA REAL DE UN ARCHIVO PHP
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Aplicación</title>
+</head>
+<body>
+
+<?php
+
+// Lógica del servidor
+$nombre = "Marlonete";
+
+?>
+
+<h1>Bienvenido</h1>
+
+<p>
+
+<?php
+echo "Hola " . $nombre;
+?>
+
+</p>
+
+</body>
+</html>
+
+🔍 EXPLICACIÓN TÉCNICA DETALLADA
+
+🔹 HTML
+
+Se envía directamente al navegador
+No pasa por lógica
+
+🔹 PHP
+
+Se ejecuta en el servidor
+
+Puede:
+Procesar datos
+Conectarse a bases de datos
+Generar contenido dinámico
+
+🔹 INTERACCIÓN
+
+PHP “inyecta” datos dentro del HTML:
+
+echo "Hola " . $nombre;
+
+⚠️ PUNTO CRÍTICO
+
+El archivo final que recibe el navegador es:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Aplicación</title>
+</head>
+<body>
+
+<h1>Bienvenido</h1>
+
+<p>Hola Marlonete</p>
+
+</body>
+</html>
+
+🧠 PROBLEMA REAL (SPAGHETTI CODE)
+
+Cuando mezclas demasiado PHP con HTML:
+
+<?php if($edad > 18){ ?>
+    <p>Mayor de edad</p>
+<?php } else { ?>
+    <p>Menor de edad</p>
+<?php } ?>
+
+Esto escala mal en proyectos grandes.
+
+🧱 BUENAS PRÁCTICAS
+
+Separar lógica y presentación
+Minimizar PHP dentro de HTML
+Usar estructuras organizadas (MVC en el futuro)
+Mantener archivos limpios y legibles
+
+❌ ERRORES COMUNES
+
+Mezclar lógica compleja en vistas
+Código desordenado
+No entender qué se ejecuta y qué se muestra
+Duplicar lógica en múltiples archivos
+
+🧠 CONCEPTO CLAVE
+
+PHP construye la respuesta,
+HTML la representa.
