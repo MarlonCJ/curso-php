@@ -1,0 +1,26 @@
+🧠 BLOQUE 2 — TIPOS DE DATOS Y OPERADORES
+
+📖 DESCRIPCIÓN DEL BLOQUE
+
+En este bloque vas a dominar cómo PHP representa, manipula y transforma la información internamente.
+Aquí se construye la base real de la lógica de programación.
+
+Si no dominas esto:
+
+No podrás controlar condiciones correctamente
+No podrás validar datos
+No podrás trabajar con bases de datos de forma segura
+
+Este bloque define tu precisión como programador.
+
+🧩 TEMAS DEL BLOQUE
+Tipos de datos en PHP (string, int, float, bool)
+Variables y tipado dinámico
+Conversión de tipos (casting)
+Operadores aritméticos
+Operadores de asignación
+Operadores de comparación
+Operadores lógicos
+Precedencia de operadores
+Operadores ternarios
+Operadores de concatenación
