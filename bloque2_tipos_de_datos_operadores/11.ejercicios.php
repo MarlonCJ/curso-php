@@ -1,113 +1,152 @@
 <?php
 
+// 🟢 EJERCICIOS BÁSICOS (1–3)
+
 // 🧩 EJERCICIO 1
 
 // Objetivo:
-// Aplicar tipos de datos básicos y concatenación.
+// Aplicar tipos de datos y concatenación de forma controlada.
 
 // Contexto:
-// Se requiere mostrar información básica de un usuario.
+// Un sistema requiere mostrar información básica de un empleado.
 
 // Instrucciones:
 
-// Crear las siguientes variables:
-// $nombre → "Carlos"
-// $edad → 28
-// $activo → true
-// Imprimir EXACTAMENTE:
-// Nombre: Carlos
-// Edad: 28
-// Estado: 1
+// Crear exactamente:
+// $nombre = "Ana";
+// $edad = 25;
+// $salario = 1200.50;
+// Mostrar EXACTAMENTE:
+// Empleado: Ana
+// Edad: 25
+// Salario: 1200.5
+
+// Salida esperada EXACTA:
+
+// Empleado: Ana
+// Edad: 25
+// Salario: 1200.5
 
 // Reglas técnicas:
 
 // Usar echo
 // Usar concatenación (.)
-// No usar comillas dobles con variables embebidas
+// No usar <br>
+// No agregar espacios extra
 
+$nombre = "Ana";
+$edad = 25;
+$salario = 1200.50;
 
-$nombre = "Carlos";
-$edad = 28;
-$activo = true;
+echo "Empleado: " . $nombre . "\n";
+echo "Edad: " . $edad . "\n";
+echo "Salario: " . $salario . "\n"; 
 
-echo 'Nombre: ' . $nombre . '<br>';
-echo 'Edad: ' . $edad . '<br>';
-echo 'Estado: ' . $activo . '<br>';
 
 // 🧩 EJERCICIO 2
 
 // Objetivo:
-// Diferenciar tipos de datos usando var_dump.
+// Identificar tipos reales en PHP.
 
 // Contexto:
-// Necesitas validar tipos en un sistema.
+// Validación de datos antes de procesamiento.
 
 // Instrucciones:
 
-// Crear variables:
-// $valor1 = "100"
-// $valor2 = 100
-// Mostrar el tipo de ambas variables con var_dump
+// Crear:
+// $a = "200";
+// $b = 200;
+// $c = true;
+// Mostrar SOLO con var_dump en este orden:
+// $a
+// $b
+// $c
 
-// Salida esperada EXACTA (estructura):
-// Debe mostrar claramente:
+// Salida esperada EXACTA:
 
-// string
-// int
+// string(3) "200"
+// int(200)
+// bool(true)
 
-$valor1 = "100";
-$valor2 = 100;
+// Reglas técnicas:
 
-var_dump($valor1);
-var_dump($valor2);
-echo '<br>';
+// No usar echo adicional
+// No modificar valores
+
+$a = "200";
+$b = 200;
+$c = true;
+
+var_dump($a);
+var_dump($b);
+var_dump($c);
 
 
 // 🧩 EJERCICIO 3
 
 // Objetivo:
-// Aplicar casting.
+// Aplicar casting correctamente.
 
 // Contexto:
-// Recibes un valor como string y debes convertirlo.
+// Un valor llega como string desde base de datos.
 
 // Instrucciones:
 
-// Crear $numero = "50"
-// Convertirlo a entero
-// Imprimir el resultado
+// Crear:
+// $valor = "75.9";
+// Convertir a entero
+// Mostrar SOLO el resultado
 
 // Salida esperada EXACTA:
 
-// 50
+// 75
 
-$numero = "50";
+// Reglas técnicas:
 
-$numero2 = (int)$numero; 
+// No usar var_dump
+// No imprimir valor original
 
-echo $numero2 . '<br>';
+$valor = "75.9";
+
+echo (int)$valor. "\n";
+
+// 🟡 EJERCICIOS INTERMEDIOS (4–7)
 
 // 🧩 EJERCICIO 4
 
 // Objetivo:
-// Uso de operadores aritméticos.
+// Aplicar operadores aritméticos correctamente.
+
+// Contexto:
+// Sistema de cálculo simple.
 
 // Instrucciones:
 
-// Crear $a = 10, $b = 5
-// Imprimir:
-// Suma: 15
-// Resta: 5
-// Multiplicacion: 50
-// Division: 2
+// Crear:
+// $x = 8;
+// $y = 3;
+// Mostrar EXACTAMENTE:
+// Suma: 11
+// Multiplicacion: 24
+// Modulo: 2
 
-$a = 10;
-$b = 5;
+// Salida esperada EXACTA:
 
-echo 'Suma: ' . ($a + $b) . '<br>';
-echo 'Resta: ' . ($a - $b) . '<br>';
-echo 'Multiplicacion: ' . ($a * $b) . '<br>';
-echo 'Division: ' . ($a / $b) . '<br>';
+// Suma: 11
+// Multiplicacion: 24
+// Modulo: 2
+
+// Reglas técnicas:
+
+// Cada línea separada
+// No agregar texto adicional
+
+$x = 8;
+$y = 3;
+
+echo "Suma: " . ($x + $y) . "\n";
+echo "Multiplicacion: " . ($x * $y) . "\n";
+echo "Modulo: " . ($x % $y) . "\n";
 
 
 // 🧩 EJERCICIO 5
@@ -115,52 +154,66 @@ echo 'Division: ' . ($a / $b) . '<br>';
 // Objetivo:
 // Uso de operadores de asignación.
 
+// Contexto:
+// Acumulación de valores en sistema.
+
 // Instrucciones:
 
-// Crear $numero = 10
+// Crear:
+// $total = 20;
 // Aplicar:
-// += 5
-// *= 2
-// Imprimir resultado final
+// $total -= 5;
+// $total += 10;
+// Mostrar SOLO resultado final
 
 // Salida esperada EXACTA:
 
-// 30
+// 25
 
-$numero = 10;
+// Reglas técnicas:
 
-$numero += 5;
-echo $numero . '<br>';
+// No mostrar pasos intermedios
 
-$numero *= 2;
-echo $numero . '<br>';
+$total = 20;
 
-// 🟡 EJERCICIOS INTERMEDIOS (6–15)
+$total -= 5;
+$total += 10;
+
+echo $total . "\n";
+
+
+
 // 🧩 EJERCICIO 6
 
 // Objetivo:
 // Comparación estricta vs débil.
 
+// Contexto:
+// Validación de datos en sistema crítico.
+
 // Instrucciones:
 
 // Crear:
-// $a = 10
-// $b = "10"
-// Evaluar:
-// $a == $b
-// $a === $b
-// Mostrar ambos resultados con var_dump
+// $a = "5";
+// $b = 5;
+// Mostrar SOLO con var_dump:
+// $a == $b;
+// $a === $b;
 
+// Salida esperada EXACTA:
 
-$a = 10;
-$b = "10";
+// bool(true)
+// bool(false)
 
-echo ($a == $b) ? 'Es igual' : 'No es igual';
-echo '<br>';
+// Reglas técnicas:
 
-echo ($a === $b) ? 'Es igual' : 'No es igual';
-echo '<br>';
+// No usar echo
 
+$a = "5";
+$b = 5;
+
+var_dump($a == $b);
+var_dump($a === $b);
 
 // 🧩 EJERCICIO 7
 
@@ -168,205 +221,122 @@ echo '<br>';
 // Uso de operadores lógicos.
 
 // Contexto:
-// Validar acceso.
-
-// Instrucciones:
-
-// $edad = 20
-// $tieneLicencia = true
-// Mostrar:
-// Acceso permitido
-
-// Solo si ambas condiciones se cumplen.
-
-$edad = 20;
-$tieneLicencia = true;
-
-echo ($edad >= 18 && $tieneLicencia == true) ? 'Acceso permitido' : 'No puede ingresar';
-echo '<br>';
-
-
-// 🧩 EJERCICIO 8
-
-// Objetivo:
-// Uso de operador ternario.
-
-// Instrucciones:
-
-// $edad = 16
-// Mostrar:
-// Menor de edad
-
-
-$edad = 16;
-
-echo ($edad >= 18) ? 'Mayor de edad' : 'Menor de edad';
-echo '<br>';
-
-
-
-// 🧩 EJERCICIO 9
-
-// Objetivo:
-// Precedencia de operadores.
-
-// Instrucciones:
-
-// Evaluar:
-// $resultado = 5 + 5 * 2;
-// Imprimir resultado
-
-// Salida esperada EXACTA:
-
-// 15
-
-
-$resultado = 5 + (5 * 2);
-echo $resultado . '<br>';
-
-
-
-// 🧩 EJERCICIO 10
-
-// Objetivo:
-// Uso de concatenación avanzada.
+// Validar condiciones de acceso.
 
 // Instrucciones:
 
 // Crear:
-// $producto = "Laptop"
-// $precio = 1500
-// Mostrar:
-// Producto: Laptop - Precio: 1500
-
-$producto = "Laptop";
-$precio = 1500;
-
-echo 'Producto: ' . $producto . ' - Precio: ' . $precio;
-echo '<br>'; 
-
-
-// 🧩 EJERCICIO 11
-
-// Objetivo:
-// Conversión a booleano.
-
-// Instrucciones:
-
-// $valor = "0"
-// Convertir a booleano
-// Mostrar resultado con var_dump
-
-$valor = "0";
-echo $valor . '<br>';
-
-$valor = (bool)$valor;
-var_dump($valor);
-
-
-// 🧩 EJERCICIO 12
-
-// Objetivo:
-// Uso combinado de operadores.
-
-// Instrucciones:
-
-// $a = 10, $b = 3
-// Calcular:
-// Resultado: 13
-
-// (usa suma y módulo correctamente)
-
-
-
-// 🧩 EJERCICIO 13
-
-// Objetivo:
-// Concatenación con cálculo.
-
-// Instrucciones:
-
-// $precio = 20, $cantidad = 3
-// Mostrar:
-// Total: 60
-// 🧩 EJERCICIO 14
-
-// Objetivo:
-// Validación lógica.
-
-// Instrucciones:
-
-// $usuario = true, $admin = false
-// Mostrar:
-// Acceso permitido
-
-// Si al menos uno es verdadero
-
-// 🧩 EJERCICIO 15
-
-// Objetivo:
-// Uso de NOT.
-
-// Instrucciones:
-
-// $activo = false
-// Mostrar:
-// Usuario inactivo
-// 🔴 EJERCICIOS AVANZADOS (16–20)
-// 🧩 EJERCICIO 16
-
-// Objetivo:
-// Evaluación compleja con precedencia.
-
-// Instrucciones:
-
-// $a = true, $b = false, $c = true
-// Evaluar correctamente lógica combinada
-// Mostrar resultado con var_dump
-// 🧩 EJERCICIO 17
-
-// Objetivo:
-// Uso profesional del ternario.
-
-// Instrucciones:
-
-// $nota = 7
-// Mostrar:
-// Aprobado
-// 🧩 EJERCICIO 18
-
-// Objetivo:
-// Casting + operación.
-
-// Instrucciones:
-
-// $valor = "100abc"
-// Convertir a entero
-// Multiplicar por 2
-// Mostrar resultado
-// 🧩 EJERCICIO 19
-
-// Objetivo:
-// Control de tipos.
-
-// Instrucciones:
-
-// $dato = "false"
-// Convertir a booleano
+// $activo = true;
+// $verificado = false;
+// Evaluar:
+// $resultado = $activo && $verificado;
 // Mostrar con var_dump
-// 🧩 EJERCICIO 20
+
+// Salida esperada EXACTA:
+
+// bool(false)
+
+// Reglas técnicas:
+
+// No usar if
+// No usar ternario
+
+$activo = true;
+$verificado = false;
+
+$resultado = $activo && $verificado;
+
+var_dump($resultado);
+
+
+// 🔴 EJERCICIOS AVANZADOS (8–10)
+// 🧩 EJERCICIO 8
 
 // Objetivo:
-// Simulación real.
+// Precedencia de operadores.
 
 // Contexto:
-// Sistema de compra.
+// Evaluación matemática en sistema.
 
 // Instrucciones:
 
-// $precio = "200"
-// $cantidad = 2
-// $descuento = 10 (%)
-// Calcular total con descuento
-// Mostrar:
-// Total final: 360
+// Crear EXACTAMENTE:
+// $resultado = 10 - 2 * 3;
+// Mostrar resultado
+
+// Salida esperada EXACTA:
+
+// 4
+
+// Reglas técnicas:
+
+// No usar paréntesis
+// No modificar expresión
+
+$resultado = 10 - 2 * 3;
+echo $resultado. "\n";
+
+// 🧩 EJERCICIO 9
+
+// Objetivo:
+// Uso de operador ternario.
+
+// Contexto:
+// Sistema de validación de edad.
+
+// Instrucciones:
+
+// Crear:
+// $edad = 18;
+// Evaluar con ternario:
+// Si edad >= 18 → "Acceso permitido"
+// Si no → "Acceso denegado"
+// Mostrar resultado
+
+// Salida esperada EXACTA:
+
+// Acceso permitido
+
+// Reglas técnicas:
+
+// Debes usar operador ternario
+// No usar if
+
+$edad = 18;
+
+echo ($edad >= 18) ? 'Acceso permitido' : 'Acceso denegado';
+echo "\n";
+
+// 🧩 EJERCICIO 10
+
+// Objetivo:
+// Casting + operación + concatenación.
+
+// Contexto:
+// Sistema de facturación.
+
+// Instrucciones:
+
+// Crear:
+// $precio = "50";
+// $cantidad = 4;
+// Convertir precio a entero
+// Calcular total
+// Mostrar EXACTAMENTE:
+// Total: 200
+
+// Salida esperada EXACTA:
+
+// Total: 200
+
+// Reglas técnicas:
+
+// Usar casting
+// Usar concatenación
+// No agregar texto adicional
+
+$precio = "50";
+$cantidad = 4;
+$total = (int)$precio * $cantidad;
+
+echo 'Total: ' . $total;
