@@ -80,3 +80,4 @@ while ($i <= 5) {
 // ❌ Bucles infinitos
 // ❌ Variables mal inicializadas
 // ❌ Lógica desordenada dentro del bucle
+
