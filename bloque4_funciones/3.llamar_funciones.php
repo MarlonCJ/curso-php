@@ -174,3 +174,4 @@ function abrirCaja() {
 echo "Sistema iniciado <br>";
 
 abrirCaja();
+
