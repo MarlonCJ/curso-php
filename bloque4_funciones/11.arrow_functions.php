@@ -3,144 +3,160 @@
 
 📘 BLOQUE 4 — TEMA 11: ARROW FUNCTIONS EN PHP
 
-🎯 Definición Profesional
+En PHP, las Arrow Functions (funciones flecha) son una forma corta y moderna de escribir funciones anónimas. Se introdujeron en PHP 7.4.
 
-Las Arrow Functions (funciones flecha) son una forma más corta y moderna de escribir funciones anónimas en PHP.
+🔥 Sintaxis básica
 
-Se introdujeron en PHP 7.4.
+fn(parámetros) => expresión;
 
-Se usan cuando la lógica es pequeña y directa.
+👉 Siempre retornan automáticamente el resultado de la expresión.
 
-🧠 Sintaxis
+✅ Ejemplo simple
 
-fn(parametros) => expresion;
-
-Retornan automáticamente el resultado de la expresión.
-
-✅ Ejemplo Básico
+Función normal:
 
 */
+
+$sumar = function($a, $b) {
+    return $a + $b;
+};
+
+echo $sumar(5, 3);
+
+
+// Arrow Function:
+
 
 $sumar = fn($a, $b) => $a + $b;
 
 echo $sumar(5, 3);
 
 /*
+📌 Resultado:
 
-Resultado:
 8
 
-🔍 Equivalencia con Función Anónima
 
-Tradicional
+🔥 Ejemplo con arrays (MUY usado)
 
-$sumar = function ($a, $b) {
-    return $a + $b;
-};
-
-Arrow Function
-
-$sumar = fn($a, $b) => $a + $b;
-
-Más limpia para lógica corta.
-
-📌 Retorno Automático
-
-No escribes return.
-
-fn($x) => $x * 2;
-
-Ya devuelve el resultado.
-
-🏢 Uso Empresarial Real
-
-Muy comunes con arrays y callbacks.
-
-array_map
+Usando array_map()
 
 */
 
-$nums = [1,2,3];
+$numeros = [1,2,3,4,5];
 
-$resultado = array_map(fn($n) => $n * 2, $nums);
+$dobles = array_map(fn($n) => $n * 2, $numeros);
 
-print_r($resultado);
+print_r($dobles);
 
 /*
 
 Resultado:
-Array
-(
-    [0] => 2
-    [1] => 4
-    [2] => 6
-)
-📌 Captura Variables Externas
 
-Arrow Functions capturan automáticamente variables del entorno.
+[2,4,6,8,10]
 
-$iva = 0.19;
 
-$calc = fn($precio) => $precio * $iva;
+🔥 Ejemplo con array_filter()
+$numeros = [1,2,3,4,5,6];
 
-echo $calc(100);
+$pares = array_filter($numeros, fn($n) => $n % 2 == 0);
+
+print_r($pares);
 
 Resultado:
-19
 
-No necesitas use.
+[2,4,6]
+🔥 Captura automática de variables externas
 
-❌ Limitación Importante
+Las Arrow Functions heredan variables del exterior automáticamente.
 
-Son ideales para una sola expresión.
+$iva = 1.19;
 
-❌ No recomendado:
+$precioFinal = fn($precio) => $precio * $iva;
 
-fn($x) => {
-   $a = $x * 2;
-   return $a;
+echo $precioFinal(100);
+
+Resultado:
+
+119
+
+👉 En funciones normales tocaría usar:
+
+function($precio) use ($iva)
+⚠️ Limitación importante
+
+Solo permiten una expresión.
+
+❌ Esto NO sirve:
+
+fn($n) => {
+   $x = $n * 2;
+   return $x;
+}
+✅ Para múltiples líneas usa function normal
+function($n) {
+   $x = $n * 2;
+   return $x;
+}
+🔥 Cuándo usar Arrow Functions
+
+✅ Callbacks
+✅ array_map()
+✅ array_filter()
+✅ array_reduce()
+✅ Ordenamientos rápidos
+✅ Código corto y limpio
+
+🔥 Tu ejemplo de examen
+echo procesar(5, fn($n) => $n * 3);
+
+Significa:
+
+👉 envía el número 5
+👉 y una función que multiplica por 3
+
+Si procesar() hace esto:
+
+function procesar($numero, $callback){
+    return $callback($numero);
 }
 
-Para lógica compleja usa función tradicional.
+Entonces:
 
-❌ Errores Comunes
-
-1. Usarlas para todo
-
-No todo debe ser corto.
-
-2. Código ilegible
-
-fn($a,$b,$c,$d) => ...
-
-Si se vuelve confuso, mejor función normal.
-
-3. Olvidar que solo aceptan expresión
-
-No bloques largos.
-
-✅ Buenas Prácticas
-
-Usa arrow functions en callbacks pequeños.
-Mantén expresiones claras.
-Usa función tradicional si crece la lógica.
-
-🧠 Mentalidad Senior
-
-La mejor herramienta depende del contexto:
-
-Lógica simple → Arrow Function
-Lógica compleja → Función normal
-
-📌 Ejemplo Profesional Limpio
-
-<?php
-
-$descuento = fn($precio) => $precio * 0.9;
-
-echo $descuento(50000);
+echo procesar(5, fn($n) => $n * 3);
 
 Resultado:
-45000
+
+15
+🔥 Nivel PRO (muy usado)
+$usuarios = [
+ ['nombre'=>'Juan','edad'=>20],
+ ['nombre'=>'Ana','edad'=>30]
+];
+
+$nombres = array_map(fn($u) => $u['nombre'], $usuarios);
+
+print_r($nombres);
+
+Resultado:
+
+['Juan','Ana']
+📌 Regla fácil de recordar
+
+Si la función es pequeña:
+
+fn() => algo
+
+Si es grande:
+
+function(){}
+🚀 Mi consejo como profesor PHP
+
+Debes dominar Arrow Functions porque se usan muchísimo en:
+
+Laravel
+APIs modernas
+Código limpio
+Programación funcional
 
 */
