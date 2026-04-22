@@ -1,20 +1,27 @@
 Guía Técnica: Scripting y Lenguajes Interpretados
+
 1. Conceptos Fundamentales
+
 ¿Qué es el Scripting?
+
 Es el proceso de escribir código en texto plano (un script) para definir lógica, automatizar tareas o estructurar comportamientos. Este código no se transforma en un archivo ejecutable independiente (.exe o binario), sino que es leído y ejecutado en tiempo real por un programa intermedio llamado intérprete o motor.
 
 ¿Qué es un Lenguaje Interpretado?
+
 Es el lenguaje que utilizas para hacer scripting. Se caracteriza por procesar las instrucciones línea por línea en tiempo real (tiempo de ejecución o runtime).
 
 Analogía: Funciona como un traductor humano en una conferencia en vivo. Escucha una frase en un idioma, la traduce a la máquina al instante y pasa a la siguiente.
 
 Diferencia con un Lenguaje Compilado
+
 Un lenguaje compilado requiere un paso previo donde todo el código fuente se traduce a código máquina de una sola vez, generando un archivo ejecutable antes de poder usarse.
 
 Analogía: Funciona como la traducción de un libro. Se traduce completo y se imprime. Quien lee el libro ya no necesita al traductor.
 
 2. Lenguajes: Ejemplos y Casos de Uso
+
 A. Lenguajes de Scripting / Interpretados
+
 Diseñados para agilidad, desarrollo web, automatización de sistemas operativos y conexión de componentes.
 
 PHP: Motor del lado del servidor (utiliza la Zend Engine). Procesa la lógica web de forma dinámica.
@@ -26,6 +33,7 @@ JavaScript: Scripting para interactividad en navegadores y desarrollo backend (N
 Python: Lenguaje multipropósito utilizado desde pequeños scripts hasta inteligencia artificial.
 
 B. Lenguajes Compilados
+
 Diseñados para crear software independiente, sistemas operativos y aplicaciones de máximo rendimiento.
 
 C y C++: Utilizados para crear motores de bases de datos y núcleos de sistemas operativos (como el kernel de Linux).
@@ -33,7 +41,9 @@ C y C++: Utilizados para crear motores de bases de datos y núcleos de sistemas 
 Go y Rust: Lenguajes modernos para infraestructura en la nube y sistemas críticos de alta concurrencia.
 
 3. Ventajas y Desventajas del Scripting (Interpretado)
+
 Puntos Fuertes (Ventajas)
+
 Desarrollo Ágil e Inmediato: Escribes código, guardas y ejecutas. No hay tiempos de espera por compilación. Excelente para iterar y corregir lógica rápidamente.
 
 Multiplataforma: El mismo script (.php o .sh) funciona en cualquier sistema operativo que tenga el intérprete instalado. No requiere generar una versión específica para Windows y otra para Linux.
@@ -41,6 +51,7 @@ Multiplataforma: El mismo script (.php o .sh) funciona en cualquier sistema oper
 Facilidad de Lectura: Suelen tener un nivel de abstracción más alto, enfocándose en la lógica pura (el "qué hacer") y no en la gestión manual de memoria de la máquina.
 
 Puntos Críticos (Desventajas)
+
 Dependencia del Entorno: El script no funciona por sí solo. El servidor o la máquina local deben tener instalado el intérprete (ej. el binario de PHP instalado en el servidor).
 
 Rendimiento: Son más lentos en operaciones de cálculo pesado, ya que la máquina consume recursos traduciendo el código simultáneamente a su ejecución. (Nota técnica: Motores modernos mitigan esto usando cachés como OPcache).
@@ -48,6 +59,7 @@ Rendimiento: Son más lentos en operaciones de cálculo pesado, ya que la máqui
 Detección de Errores Tardía: Un error de sintaxis en la línea 500 no se detectará hasta que el intérprete ejecute las 499 líneas anteriores y choque en ese punto exacto.
 
 4. Aplicación Práctica en el Entorno de Trabajo
+
 En Desarrollo Backend (PHP): La agilidad del scripting permite estructurar arquitecturas dinámicas, manipular memoria (variables, arrays) y gestionar salidas (buffers, echo, return) al vuelo, facilitando la creación de flujos de trabajo eficientes.
 
 En Administración de Sistemas (Linux): Mediante Bash, el scripting automatiza la gestión de directorios, la actualización de paquetes (APT) y el control de permisos directos en la terminal, agilizando el mantenimiento del sistema sin requerir software adicional.
