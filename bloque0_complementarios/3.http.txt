@@ -1,0 +1,44 @@
+
+QUE ES HTTP?
+
+HTTP son las siglas de Hypertext Transfer Protocol (Protocolo de Transferencia de Hipertexto).
+
+En términos muy simples, es el idioma y conjunto de reglas que usan tu navegador (como Chrome o Safari) y los servidores web para comunicarse entre sí.
+
+Para entenderlo mejor, imagina que vas a un restaurante:
+
+Tú (el navegador web): Quieres ver una página o enviar un formulario.
+
+La cocina (el servidor web): Es donde está guardada la página web o donde se procesan los datos.
+
+El mesero (HTTP): Es el intermediario. Toma tu pedido, lo lleva a la cocina y luego te trae la comida.
+
+¿Cómo funciona la charla HTTP?
+
+La comunicación en HTTP siempre funciona en un ciclo de dos pasos:
+
+La Petición (Request): El navegador le "pide" algo al servidor. Aquí es donde entran los métodos de los que hablábamos antes (GET para pedir la página web, POST para enviar los datos de un formulario).
+
+La Respuesta (Response): El servidor recibe la petición, hace su trabajo y "responde". Si todo sale bien, la respuesta incluye el código HTML y las imágenes para que tu navegador las dibuje en pantalla. Si algo falla, te devuelve un error (como el famoso error "404 No Encontrado").
+
+En resumen y conectándolo con tu pregunta anterior:
+
+Cuando visitas una web, tu navegador usa HTTP para mandar una Petición (Request) al servidor. En PHP, la variable $_SERVER["REQUEST_METHOD"] simplemente te permite asomarte a esa petición para ver qué "verbo" usó el navegador para hablarle al servidor (GET o POST).
+
+Nota rápida: Hoy en día verás casi siempre HTTPS. La "S" final significa Secure (Seguro). Es exactamente el mismo idioma (HTTP), pero viaja encriptado para que nadie más pueda leer la conversación, lo cual es vital para proteger contraseñas y tarjetas de crédito.
+
+ES UN PROTOCOLO PARA ENVIAR PETICIONES DE UN USUARIO A SERVIDOR?
+
+¡Exactamente! Lo has entendido a la perfección.
+
+HTTP es, en esencia, el protocolo diseñado para enviar esas peticiones desde el cliente (el navegador del usuario) hacia el servidor.
+
+Solo añadiría un pequeño detalle para que tu definición sea 100% completa: es una comunicación de ida y vuelta.
+
+Es decir, el protocolo HTTP dicta las reglas para ambas partes del viaje:
+
+La Ida: Cómo el navegador empaca y envía la petición (ej. "Quiero ver la página de inicio" o "Aquí van mis datos de inicio de sesión").
+
+La Vuelta: Cómo el servidor empaca y devuelve la respuesta (ej. "Aquí tienes el código HTML de la página" o "Error, contraseña incorrecta").
+
+¡Pero sí, tu resumen es completamente correcto! Es el puente de comunicación entre el usuario y el servidor.

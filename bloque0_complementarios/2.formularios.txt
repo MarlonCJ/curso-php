@@ -1,0 +1,48 @@
+
+Que significa esto : $_SERVER["REQUEST_METHOD"]
+
+En PHP, $_SERVER["REQUEST_METHOD"] se utiliza para obtener el método de solicitud HTTP que el navegador del usuario empleó para acceder a la página actual.
+
+Aquí tienes el desglose exacto de lo que significa:
+
+$_SERVER: Es una variable "superglobal" en PHP (un array/arreglo) que contiene información sobre el entorno del servidor web, las cabeceras (headers), las rutas y la ubicación de los scripts.
+
+["REQUEST_METHOD"]: Es la clave específica dentro de ese array que guarda la información sobre cómo se pidió la página.
+
+Los valores más comunes que devuelve son:
+
+GET: Ocurre cuando un usuario simplemente escribe una URL en la barra de direcciones de su navegador, hace clic en un enlace, o envía un formulario con el método GET. Se utiliza para "solicitar" o leer información.
+
+POST: Ocurre principalmente cuando un usuario envía un formulario HTML que tiene el atributo method="POST". Se utiliza para "enviar" información al servidor de forma oculta (como contraseñas, datos personales o archivos).
+
+Otros métodos (muy usados al crear APIs): PUT, DELETE, PATCH.
+
+¿Para qué se usa en la práctica?
+
+Su uso más frecuente es comprobar si un formulario ha sido enviado antes de intentar procesar los datos ingresados por el usuario. De esta manera, evitas que tu código intente leer datos que aún no existen cuando la página se carga por primera vez.
+
+Ejemplo de cómo se usa en el código:
+
+PHP
+
+<?php
+
+// Comprobamos si la página fue solicitada a través de un envío de formulario (POST)
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Este código solo se ejecutará si el usuario presionó el botón "Enviar"
+
+    $usuario = htmlspecialchars($_POST["nombre_usuario"]);
+    echo "Formulario recibido. Bienvenido, " . $usuario;
+
+} else {
+    
+    // Si el método es GET, significa que la página recién se está cargando normalmente
+    // Aquí normalmente mostrarías el formulario HTML vacío
+    echo "Por favor, completa y envía el formulario.";
+
+}
+?>
+
+En resumen, esta línea de código te dice la intención detrás de la visita del usuario: ¿solo quiere ver la página (GET) o te está enviando datos para que los proceses (POST)?
