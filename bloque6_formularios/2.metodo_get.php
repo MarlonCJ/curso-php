@@ -133,6 +133,7 @@ Buscar
 Filtrar
 Navegar
 Ordenar resultados
+
 ✔ Validar existencia
 
 if (isset($_GET["nombre"]))
