@@ -101,11 +101,11 @@ htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8')
 
 Convierte caracteres HTML especiales:
 
-Entrada	Salida segura
-<	&lt;
->	&gt;
-"	&quot;
-'	&#039;
+Entrada	    Salida segura
+<	        &lt;
+>	        &gt;
+"	        &quot;
+'	        &#039;
 
 3️⃣ Resultado
 
@@ -137,12 +137,15 @@ Sanitizar depende del contexto
 
 Mostrar en HTML:
 htmlspecialchars()
+
+
 Guardar en base de datos:
 
 Usar consultas preparadas (PDO) — lo veremos después.
 
 URLs:
 urlencode()
+
 JavaScript:
 
 Escape específico JS.

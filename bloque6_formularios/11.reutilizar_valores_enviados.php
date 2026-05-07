@@ -86,11 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="POST">
 
-<input 
-type="text" 
-name="nombre" 
-placeholder="Nombre"
-value="<?php echo htmlspecialchars($nombre); ?>">
+<input type="text" name="nombre" placeholder="Nombre" value="<?php echo htmlspecialchars($nombre); ?>">
 
 <br><br>
 
@@ -104,12 +100,8 @@ value="<?php echo htmlspecialchars($email); ?>">
 
 <select name="ciudad">
     <option value="">Seleccione</option>
-    <option value="Villavicencio" <?php if($ciudad=="Villavicencio") echo "selected"; ?>>
-        Villavicencio
-    </option>
-    <option value="Bogotá" <?php if($ciudad=="Bogotá") echo "selected"; ?>>
-        Bogotá
-    </option>
+    <option value="Villavicencio" <?php if($ciudad=="Villavicencio") echo "selected"; ?>> Villavicencio </option>
+    <option value="Bogotá" <?php if($ciudad=="Bogotá") echo "selected"; ?>> Bogotá </option>
 </select>
 
 <br><br>
@@ -126,6 +118,7 @@ value="<?php echo htmlspecialchars($email); ?>">
 
 
 🔍 Explicación Técnica
+
 1️⃣ Mantener input text
 value="<?php echo htmlspecialchars($nombre); ?>"
 
@@ -136,6 +129,7 @@ Marlon
 Después del error seguirá visible.
 
 2️⃣ Mantener select
+
 if($ciudad=="Bogotá") echo "selected";
 
 Marca la opción elegida previamente.
@@ -146,6 +140,7 @@ $nombre = $_POST["nombre"] ?? "";
 Si no existe, queda vacío.
 
 🧠 Flujo Profesional
+
 Usuario llena formulario
 ↓
 Envía
@@ -155,6 +150,7 @@ PHP valida
 Hay error
 ↓
 Formulario vuelve lleno con datos previos
+
 ⚠️ Regla Importante con Password
 
 Normalmente no se repuebla contraseña por seguridad.
@@ -164,12 +160,14 @@ Normalmente no se repuebla contraseña por seguridad.
 Se deja vacío otra vez.
 
 ✅ Buenas Prácticas Profesionales
+
 ✔ Mantener campos largos
 
 Muy importante si hay muchos inputs.
 
 ✔ Escapar valores siempre
 htmlspecialchars()
+
 ✔ Reutilizar también radios y checkbox
 
 Lo veremos aplicado igual.
@@ -196,17 +194,20 @@ No recomendado.
 Frustrante.
 
 🧪 Resultado Esperado
+
 Entrada:
 Nombre: Marlon
 Correo:
 Ciudad: Bogotá
 Salida:
+
 El correo es obligatorio.
 
 Y el formulario sigue con:
 
 Nombre: Marlon
 Ciudad: Bogotá
+
 📌 Lo que aprendiste hoy
 
 ✔ Mantener datos tras errores
