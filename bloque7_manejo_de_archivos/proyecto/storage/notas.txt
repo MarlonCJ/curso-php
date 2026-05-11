@@ -1,0 +1,4 @@
+2026-05-11 10:56:27 - esto es un ejemplo de manejo de archivos
+2026-05-11 10:56:42 - osea que el log funciona asi
+2026-05-11 10:57:15 - <script>alert("hackeado")</script>
+2026-05-11 10:57:34 - esta es la forma como podemos ingresar valores
