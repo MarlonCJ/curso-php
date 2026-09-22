@@ -32,7 +32,7 @@ Imagina una biblioteca. Cada casillero tiene una etiqueta, como “nombre” o �
 
 $nombre = "Ana";
 $edad = 20;
-$activo = true;
+$activo = true;9
 
 echo $nombre;
 ```
