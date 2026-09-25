@@ -17,6 +17,14 @@
 
 $edad = 0;
 
+if($edad >= 18){
+    echo "eres mayor de edad";
+}else{
+    echo "eres menor de edad";
+}
+
+echo "\n\n";
+
 // Escribe tu solución aquí
 
 // ------------------------------------------------------
@@ -26,6 +34,14 @@ $edad = 0;
 // Usa el operador % para saber si es par o impar.
 
 $numero = 0;
+
+if($numero % 2 == 0){
+    echo "el número es par";
+}else{
+    echo "el número es impar";
+}
+
+echo "\n\n";
 
 // Escribe tu solución aquí
 
@@ -37,10 +53,16 @@ $numero = 0;
 // muestra "Acceso correcto".
 // Si no, muestra "Acceso incorrecto".
 
-$usuario = "";
-$password = "";
+$usuario = "admin";
+$password = "1234";
 
-// Escribe tu solución aquí
+if($usuario == "admin" && $password == "1234"){
+    echo "Acceso Correcto";
+}else{
+    echo "Acceso incorrecto";
+}
+
+echo "\n\n";
 
 // ------------------------------------------------------
 // Ejercicio 4: Acceso a un evento
@@ -53,6 +75,14 @@ $tieneEntrada = false;
 
 // Escribe tu solución aquí
 
+if($edadEvento >= 18 && $tieneEntrada == true){
+    echo "Puedes entrar";
+}else{
+    echo "No se permite acceso";
+}
+
+echo "\n\n";
+
 // ------------------------------------------------------
 // Ejercicio 5: Evaluación académica
 // ------------------------------------------------------
@@ -64,6 +94,15 @@ $tieneEntrada = false;
 $nota = 0.0;
 
 // Escribe tu solución aquí
+if($nota >= 4.5){
+    echo "Excelente";
+}elseif($nota >= 3.0){
+    echo "Aprovado";
+}else{
+    echo "Reprobado";
+}
+
+echo "\n\n";
 
 // ------------------------------------------------------
 // Ejercicio 6: Descuento por cantidad
@@ -73,10 +112,16 @@ $nota = 0.0;
 // Si compra más de 3 productos, aplica un descuento del 10%.
 // Si compra 3 o menos, no hay descuento.
 
-$cantidadProductos = 0;
-$precioUnitario = 0;
+$cantidadProductos = 6;
+$precioUnitario = 2000;
 
 // Escribe tu solución aquí
+
+if($cantidadProductos >= 5){
+    $pago = ($precioUnitario * $cantidadProductos) * 0.20;
+    echo $pago;
+}6
+
 
 // ------------------------------------------------------
 // Ejercicio 7: Comparación estricta
