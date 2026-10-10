@@ -93,15 +93,15 @@ Porque:
 ## 3. Operadores de comparación
 
 | Operador | Significado |
-| --- | --- |
-| `==` | Igual en valor |
-| `===` | Igual en valor y tipo |
-| `!=` | Diferente |
-| `!==` | Diferente en valor o tipo |
-| `>` | Mayor que |
-| `<` | Menor que |
-| `>=` | Mayor o igual |
-| `<=` | Menor o igual |
+| ---      | --- |
+| `==`     | Igual en valor |
+| `===`    | Igual en valor y tipo |
+| `!=`     | Diferente |
+| `!==`    | Diferente en valor o tipo |
+| `>`      | Mayor que |
+| `<`      | Menor que |
+| `>=`     | Mayor o igual |
+| `<=`     | Menor o igual |
 
 ### Ejemplo
 

@@ -15,17 +15,18 @@
 // Si es mayor o igual a 18, muestra "Eres mayor de edad".
 // En caso contrario, muestra "Eres menor de edad".
 
-$edad = 0;
-
-if($edad >= 18){
-    echo "eres mayor de edad";
-}else{
-    echo "eres menor de edad";
-}
-
-echo "\n\n";
 
 // Escribe tu solución aquí
+
+$edad = 15; // Cambia este valor para probar diferentes casos
+
+if($edad >= 18){
+    echo "Eres mayor de edad";
+}else{
+    echo "Eres menor de edad";
+}
+
+echo "\n";
 
 // ------------------------------------------------------
 // Ejercicio 2: Número par o impar
@@ -33,17 +34,18 @@ echo "\n\n";
 // Declara una variable $numero.
 // Usa el operador % para saber si es par o impar.
 
-$numero = 0;
+// Escribe tu solución aquí
+
+$numero = 33;
 
 if($numero % 2 == 0){
-    echo "el número es par";
+    echo "Es un número par";
 }else{
-    echo "el número es impar";
+    echo "Es un número impar";
 }
 
-echo "\n\n";
+echo "\n";
 
-// Escribe tu solución aquí
 
 // ------------------------------------------------------
 // Ejercicio 3: Login básico
@@ -54,15 +56,15 @@ echo "\n\n";
 // Si no, muestra "Acceso incorrecto".
 
 $usuario = "admin";
-$password = "1234";
+$contraseña = "12345";
 
-if($usuario == "admin" && $password == "1234"){
-    echo "Acceso Correcto";
+if($usuario === "admin" && $contraseña === "1234"){
+    echo "Acceso correcto";
 }else{
     echo "Acceso incorrecto";
 }
 
-echo "\n\n";
+echo "\n";
 
 // ------------------------------------------------------
 // Ejercicio 4: Acceso a un evento
@@ -70,18 +72,17 @@ echo "\n\n";
 // Declara $edadEvento y $tieneEntrada.
 // La persona puede entrar si es mayor o igual a 18 y tiene entrada.
 
-$edadEvento = 0;
-$tieneEntrada = false;
+$edadEvento = 10;
+$tieneEntrada = true;
 
-// Escribe tu solución aquí
 
 if($edadEvento >= 18 && $tieneEntrada == true){
-    echo "Puedes entrar";
+    echo "Puede entrar";
 }else{
-    echo "No se permite acceso";
+    echo "No puede entrar";
 }
 
-echo "\n\n";
+echo "\n";
 
 // ------------------------------------------------------
 // Ejercicio 5: Evaluación académica
@@ -91,18 +92,17 @@ echo "\n\n";
 // Si es >= 3.0 => "Aprobado"
 // Si es menor => "Reprobado"
 
-$nota = 0.0;
+$nota = 4.5;
 
-// Escribe tu solución aquí
 if($nota >= 4.5){
     echo "Excelente";
-}elseif($nota >= 3.0){
-    echo "Aprovado";
+}else if($nota >= 3.0){
+    echo "Aprobado";
 }else{
     echo "Reprobado";
 }
 
-echo "\n\n";
+echo "\n";
 
 // ------------------------------------------------------
 // Ejercicio 6: Descuento por cantidad
@@ -112,15 +112,19 @@ echo "\n\n";
 // Si compra más de 3 productos, aplica un descuento del 10%.
 // Si compra 3 o menos, no hay descuento.
 
-$cantidadProductos = 6;
-$precioUnitario = 2000;
+$cantidadProductos = 5;
+$precioUnitario = 500000;
+$subtotal = $cantidadProductos * $precioUnitario;
 
-// Escribe tu solución aquí
+if($cantidadProductos > 5){
+    echo $subtotal - ($subtotal * 0.2);
+}else if($cantidadProductos > 3){
+    echo $subtotal - ($subtotal * 0.1);
+}else{
+    echo "No hay descuento";
+}
 
-if($cantidadProductos >= 5){
-    $pago = ($precioUnitario * $cantidadProductos) * 0.20;
-    echo $pago;
-}6
+echo "\n";
 
 
 // ------------------------------------------------------
@@ -129,10 +133,16 @@ if($cantidadProductos >= 5){
 // Declara $valor1 = "18" y $valor2 = 18.
 // Muestra el resultado de $valor1 == $valor2 y $valor1 === $valor2.
 
+
+// Escribe tu solución aquí
+
 $valor1 = "18";
 $valor2 = 18;
 
-// Escribe tu solución aquí
+var_dump($valor1 == $valor2);
+var_dump($valor1 === $valor2);
+
+echo "\n";
 
 // ------------------------------------------------------
 // Ejercicio 8: Sistema inactivo
@@ -140,9 +150,18 @@ $valor2 = 18;
 // Declara $estaActivo = false.
 // Si no está activo, muestra "El sistema está inactivo".
 
-$estaActivo = false;
 
 // Escribe tu solución aquí
+
+$estaActivo = false;
+
+if($estaActivo == true){
+    echo "Activo";
+}else{
+    echo "Inactivo";
+}
+
+echo "\n";
 
 // ------------------------------------------------------
 // Reto final
@@ -154,11 +173,20 @@ $estaActivo = false;
 // Si todo es correcto, muestra "Acceso permitido".
 // Si no, muestra "Acceso denegado".
 
-$edadPersona = 0;
-$tieneEntradaPersona = false;
-$codigoValido = false;
 
 // Escribe tu solución aquí
+
+$edad = 15;
+$entrada = true;
+$codigo = 2026;
+
+if($edad >= 18 && $entrada == true && $codigo == 2026){
+    echo "Acceso Permitido";
+}else{
+    echo "Acceso Denegado";
+}
+
+echo "\n";
 
 // ======================================================
 // Fin de los ejercicios
