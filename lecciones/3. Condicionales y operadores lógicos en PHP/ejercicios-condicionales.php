@@ -18,8 +18,8 @@
 
 // Escribe tu solución aquí
 
-$edad = 15; // Cambia este valor para probar diferentes casos
 
+$edad = 18;
 if($edad >= 18){
     echo "Eres mayor de edad";
 }else{
@@ -27,25 +27,23 @@ if($edad >= 18){
 }
 
 echo "\n";
-
 // ------------------------------------------------------
 // Ejercicio 2: Número par o impar
 // ------------------------------------------------------
 // Declara una variable $numero.
 // Usa el operador % para saber si es par o impar.
 
-// Escribe tu solución aquí
 
-$numero = 33;
+
+$numero = 20;
 
 if($numero % 2 == 0){
-    echo "Es un número par";
+    echo "El número es par";
 }else{
-    echo "Es un número impar";
+    echo "El número es impar";
 }
 
 echo "\n";
-
 
 // ------------------------------------------------------
 // Ejercicio 3: Login básico
@@ -63,6 +61,8 @@ if($usuario === "admin" && $contraseña === "1234"){
 }else{
     echo "Acceso incorrecto";
 }
+ 
+echo "\n";
 
 echo "\n";
 
@@ -103,7 +103,6 @@ if($nota >= 4.5){
 }
 
 echo "\n";
-
 // ------------------------------------------------------
 // Ejercicio 6: Descuento por cantidad
 // ------------------------------------------------------
@@ -126,13 +125,21 @@ if($cantidadProductos > 5){
 
 echo "\n";
 
+if($cantidadProductos > 5){
+    echo $subtotal - ($subtotal * 0.2); 
+}elseif($cantidadProductos > 3){
+    echo $subtotal - ($subtotal * 0.1);
+}else{
+    echo $subtotal . " No se aplico descuento";
+}
+
+echo "\n";
 
 // ------------------------------------------------------
 // Ejercicio 7: Comparación estricta
 // ------------------------------------------------------
 // Declara $valor1 = "18" y $valor2 = 18.
 // Muestra el resultado de $valor1 == $valor2 y $valor1 === $valor2.
-
 
 // Escribe tu solución aquí
 
