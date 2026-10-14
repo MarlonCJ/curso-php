@@ -17,6 +17,12 @@
 
 // Escribe tu solución aquí.
 
+
+for($i=1; $i <= 10; $i++){
+    echo $i . "\n";
+}
+echo "\n";
+
 // ------------------------------------------------------
 // Ejercicio 2: Sumar del 1 al 10
 // ------------------------------------------------------
@@ -24,6 +30,16 @@
 // y muestra el resultado.
 
 // Escribe tu solución aquí.
+
+$suma= 0;
+
+for($i=1 ; $i <= 10; $i++){
+    $suma = $suma + $i;
+}
+
+echo $suma;
+echo "\n";
+
 
 // ------------------------------------------------------
 // Ejercicio 3: Mostrar números pares
@@ -33,6 +49,22 @@
 
 // Escribe tu solución aquí.
 
+$primero = true;
+
+for($i=1; $i <=20 ; $i++){
+    if($i % 2 == 0){
+        if(!$primero){
+            echo ", ";
+        }    
+        echo $i;
+        $primero = false;
+    }else{
+        continue;
+    }
+}
+
+echo "\n";
+
 // ------------------------------------------------------
 // Ejercicio 4: Contador con while
 // ------------------------------------------------------
@@ -41,12 +73,38 @@
 
 // Escribe tu solución aquí.
 
+
+$numero = 5;
+
+while($numero >= 1){
+    
+    echo $numero . "\n";
+    $numero--;
+}
+
+echo "\n";
+
 // ------------------------------------------------------
 // Ejercicio 5: do while
 // ------------------------------------------------------
 // Usa un bucle do while para mostrar los números del 1 al 3.
 
 // Escribe tu solución aquí.
+
+$num = 1;
+$b = true;
+
+do{
+    if(!$b){
+        echo ", ";
+    }
+
+    echo $num;
+    $num++;
+    $b = false;
+}while($num <= 3);
+
+echo "\n";
 
 // ------------------------------------------------------
 // Ejercicio 6: Recorrer un arreglo con foreach
@@ -56,6 +114,15 @@
 
 // Escribe tu solución aquí.
 
+
+$nombres = ["Marlon", "Edinson", "Cortes", "Jara", "dari"];
+
+foreach($nombres as $nombre){
+    echo $nombre . "\n";
+}
+
+echo "\n";
+
 // ------------------------------------------------------
 // Ejercicio 7: Tabla de multiplicar
 // ------------------------------------------------------
@@ -63,6 +130,12 @@
 // desde el 1 hasta el 10.
 
 // Escribe tu solución aquí.
+
+$tabla = 5;
+
+for($i=1 ; $i <= 10 ; $i++){
+    echo $tabla . " x " . $i . " = ". $tabla * $i . "\n";
+}
 
 // ------------------------------------------------------
 // Ejercicio 8: break y continue
@@ -72,6 +145,16 @@
 
 // Escribe tu solución aquí.
 
+
+for($i=1 ; $i <= 10 ; $i++){
+    if($i == 5){
+        continue;
+    }
+
+    echo $i . "\n";
+}
+
+echo "\n";
 // ------------------------------------------------------
 // Reto final
 // ------------------------------------------------------
@@ -80,6 +163,19 @@
 // Usa un bucle y continue para omitir los productos que cuesten más de 100.
 
 // Escribe tu solución aquí.
+
+$productos = [
+    "tv" => 20,
+    "equipo sonido" => 16,
+    "pc samsung" => 1200000
+];
+
+foreach($productos as $producto => $precio){
+    if($precio > 100){
+        continue;
+    }
+    echo "Producto: $producto Precio: $precio \n"; 
+}
 
 // ======================================================
 // Fin de los ejercicios
