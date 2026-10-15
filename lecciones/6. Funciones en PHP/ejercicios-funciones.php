@@ -17,7 +17,11 @@
 
 // Escribe tu solución aquí.
 
+function mostrarBienvenida(){
+    echo "Bienvenidos \n";
+}
 
+mostrarBienvenida();
 // ------------------------------------------------------
 // Ejercicio 2: Saludar por nombre
 // ------------------------------------------------------
@@ -26,6 +30,16 @@
 
 // Escribe tu solución aquí.
 
+$nombre1 = 'marlon';
+$nombre2 = 'edinson';
+
+function mostrarNombre($nombre){
+    echo "Hola, $nombre buenos días \n";
+}
+
+mostrarNombre($nombre1);
+
+mostrarNombre($nombre2);
 
 // ------------------------------------------------------
 // Ejercicio 3: Sumar dos números
@@ -35,14 +49,27 @@
 
 // Escribe tu solución aquí.
 
+function sumar($num1, $num2){
+    return $num1 + $num2;
+}
 
-// ------------------------------------------------------
+$suma = sumar(20,30);
+echo "El resultado de la suma: $suma \n";
+
+//------------------------------------------------------
 // Ejercicio 4: Parámetro predeterminado
 // ------------------------------------------------------
 // Crea una función que reciba un nombre con el valor predeterminado
 // "invitado". Muestra un saludo y prueba llamarla con y sin argumento.
 
 // Escribe tu solución aquí.
+
+function invitado($invitado = "sin nombre"){
+    echo "Bienvenido $invitado \n";
+}
+
+invitado('marlon');
+invitado();
 
 
 // ------------------------------------------------------
@@ -53,7 +80,17 @@
 
 // Escribe tu solución aquí.
 
+function numeroPar(int $num): void {
+    if($num % 2 == 0){
+        echo "$num es par \n";
+    }else{
+        echo "$num no es par \n";
+    }
+}
 
+numeroPar(10);
+numeroPar(9);
+numeroPar(10.5);
 // ------------------------------------------------------
 // Ejercicio 6: Precio con descuento
 // ------------------------------------------------------
