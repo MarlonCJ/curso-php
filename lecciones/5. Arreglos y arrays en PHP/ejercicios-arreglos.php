@@ -17,6 +17,15 @@
 
 // Escribe tu solución aquí.
 
+$frutas = ['manzana', 'uva' , 'pera' , 'coco' , 'limon'];
+
+foreach($frutas as $fruta){
+    echo $fruta . "\n";
+}
+
+echo "\n";
+
+
 
 // ------------------------------------------------------
 // Ejercicio 2: Acceder y modificar elementos
@@ -27,7 +36,16 @@
 
 // Escribe tu solución aquí.
 
+$colores = ['amarillo','rojo','naranja','verde','cafe'];
 
+echo $colores[0];
+echo "\n";
+echo $colores[count($colores) - 1];
+echo "\n";
+$colores[0] = "azul";
+echo $colores[0];
+echo "\n";
+echo "\n";
 // ------------------------------------------------------
 // Ejercicio 3: Agregar elementos
 // ------------------------------------------------------
@@ -37,7 +55,22 @@
 
 // Escribe tu solución aquí.
 
+$ciudades = ['bogota', 'villavicencio', 'cali'];
 
+$ciudades[] = 'yopal';
+$ciudades[] = 'manizales';
+
+foreach($ciudades as $ciudad){
+    echo $ciudad . "\n";
+}
+
+echo "\n";
+
+array_push($ciudades, 'acacias', 'granada');
+
+foreach($ciudades as $ciudad){
+    echo $ciudad . "\n";
+}
 // ------------------------------------------------------
 // Ejercicio 4: Contar elementos
 // ------------------------------------------------------
@@ -46,6 +79,9 @@
 
 // Escribe tu solución aquí.
 
+$numeros = [1,2,3,4,5,6,7,8,9,0];
+
+echo count($numeros) . "\n";
 
 // ------------------------------------------------------
 // Ejercicio 5: Arreglo asociativo de una persona
@@ -55,6 +91,24 @@
 // Actualiza la edad y muestra el nuevo valor.
 
 // Escribe tu solución aquí.
+
+
+$persona = [
+    'nombre' => 'marlon',
+    'edad' => 33,
+    'ciudad' => 'villavicencio'
+];
+
+foreach($persona as $clave => $valor){
+    echo $clave . " : " . $valor . "\n";
+}
+
+echo "\n";
+
+$persona['edad'] = 34;
+
+echo 'Edad: ' . $persona['edad'];
+echo "\n\n";
 
 
 // ------------------------------------------------------
@@ -67,6 +121,17 @@
 // Escribe tu solución aquí.
 
 
+$nombre = "camila";
+$nombres = ['marlon', 'edinson' , 'cortes' , 'jara'];
+
+if(in_array($nombre , $nombres)){
+    echo "$nombre esta en la lista";
+}else{
+    echo "$nombre no esta en la lista";
+}
+
+echo "\n\n";
+
 // ------------------------------------------------------
 // Ejercicio 7: Eliminar un elemento
 // ------------------------------------------------------
@@ -77,7 +142,24 @@
 
 // Escribe tu solución aquí.
 
+$animales = ['perro' , 'gato' , 'loro' , 'pollito' , 'gallina']; 
 
+
+foreach($animales as $clave => $valor){
+    echo $clave . " : " . $valor . "\n";
+}
+
+echo "\n";
+
+unset($animales[2]);
+
+$animales2 = array_values($animales);
+
+foreach($animales2 as $clave => $valor){
+    echo $clave . " : " . $valor . "\n";
+}
+
+echo "\n";
 // ------------------------------------------------------
 // Ejercicio 8: Catálogo de productos
 // ------------------------------------------------------
@@ -87,6 +169,27 @@
 
 // Escribe tu solución aquí.
 
+$productos = [
+    [
+        'nombre' => 'tv tlc',
+        'precio' => 1200000,
+    ],
+    [
+        'nombre' => 'equipo sonido lg',
+        'precio' => 1000000,
+    ],
+    [
+        'nombre' => 'Lapto Lenovo',
+        'precio' => 2000000,
+    ],
+];
+
+foreach($productos as $producto){
+    foreach($producto as $clave => $valor){
+        echo $clave . " : " . $valor . "\n";
+    }
+}
+echo "\n";
 
 // ------------------------------------------------------
 // Reto final: Lista de compras
@@ -98,6 +201,28 @@
 // Al final, muestra cuántos productos cumplen esa condición.
 
 // Escribe tu solución aquí.
+
+$frutas = [
+        'manzana' => 2000,
+        'uvas' => 7000,
+        'limon' => 300,
+        'coco' => 10000,
+        'banano' => 50,
+        'pera' => 100
+];
+
+$cantidadFrutas = 0;
+
+foreach($frutas as $fruta => $precio){
+    if($precio <= 100){
+        echo "$fruta : $precio \n"; 
+        $cantidadFrutas++;
+    }
+}   
+
+echo "Cantidad de Frutas: $cantidadFrutas";
+echo "\n";
+
 
 // ======================================================
 // Fin de los ejercicios
