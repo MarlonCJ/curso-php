@@ -100,7 +100,16 @@ numeroPar(10.5);
 
 // Escribe tu solución aquí.
 
+function precioFinal(float $precio, float $porcentaje): float{
+    
+    $porcentaje = $porcentaje / 100;
+    $descuento = $precio * $porcentaje;
+    $precioFinal = $precio - $descuento;
+    return $precioFinal;
+}
 
+$precioFinal = precioFinal(200000, 20);
+echo "Precio Final: $precioFinal \n";
 // ------------------------------------------------------
 // Ejercicio 7: Total de una lista de precios
 // ------------------------------------------------------
@@ -109,7 +118,18 @@ numeroPar(10.5);
 
 // Escribe tu solución aquí.
 
+$precios = [10000,20000,30000,45000,42000,52000];
 
+function sumaPrecios(array $precios){
+    $valor = 0;
+    foreach($precios as $precio){
+        $valor = $valor + $precio;
+    }
+    return $valor;
+}
+
+sumaPrecios($precios);
+echo "\n";
 // ------------------------------------------------------
 // Reto final: Resumen de compras
 // ------------------------------------------------------
@@ -119,6 +139,28 @@ numeroPar(10.5);
 
 // Escribe tu solución aquí.
 
+$alimentos = [
+    'pan' => 100,
+    'caramelo' => 50,
+    'cocakola' => 4500,
+    'gomita' => 50,
+];
+
+function precioProducto(array $alimentos): void{
+
+    $cant = 0;
+
+    foreach($alimentos as $alimento => $precio){
+        if($precio <= 100){
+            echo "$alimento: $precio \n";
+            $cant++;
+        }
+    }
+
+    echo "Cantidad: $cant \n";
+}
+
+precioProducto($alimentos);
 
 // ======================================================
 // Fin de los ejercicios
