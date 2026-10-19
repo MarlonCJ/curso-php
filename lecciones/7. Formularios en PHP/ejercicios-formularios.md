@@ -8,6 +8,7 @@ qué necesita cada formulario y por qué.
 No uses PHP en este capítulo. Los ejercicios se revisarán antes de avanzar al
 capítulo 2, donde aprenderás a recibir y procesar los datos con PHP.
 
+
 ---
 
 ## Ejercicio 1: Reconocer las partes de un formulario
@@ -19,6 +20,18 @@ enviado y el botón de envío.
 Después explica por qué el texto de una etiqueta debe estar relacionado con el
 campo que describe y qué diferencia hay entre una etiqueta visible y un texto de
 ayuda dentro de un campo.
+
+
+respuesta
+
+el formulario es la etiqueta padre que encierra todos los input para poder enviar informacion.
+
+label: esta etiqueta es descriptiva para el campo o input a utilizar, esto mejora la experiencia del usuario
+
+id: es el identificador del campo , mediante este id podermo seleccionar ubicar rápidamente el campo, ademas de otras ventajes ejemplo, agregarle logica con javascript o estilos con css.
+
+name: este atributo es importante, nos permite identificar la informacion que se esta enviado desde ese preciso campo, si el input no tiene name , la informacion o datos que se envien directamente desde el input no llegara a su destino
+
 
 ## Ejercicio 2: Elegir los controles apropiados
 
