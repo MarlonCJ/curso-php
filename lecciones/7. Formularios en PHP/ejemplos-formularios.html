@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1: Ejemplos de formularios HTML</title>
+</head>
+<body>
+    <h1>Capítulo 1: Ejemplos de formularios HTML</h1>
+    <p>
+        Estos ejemplos usan únicamente HTML. Puedes abrir este archivo en el navegador
+        para probar los controles y leerlo en un editor para estudiar su estructura.
+        Todavía no se procesan, guardan ni validan los datos en un servidor.
+    </p>
+
+    <hr>
+    <h2>1. Formulario sencillo</h2>
+    <p>
+        Cada control que quieras enviar necesita un atributo <code>name</code>.
+        El texto de <code>label</code> se asocia al control mediante los valores
+        iguales de <code>for</code> e <code>id</code>.
+    </p>
+    <form action="" method="get">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <button type="submit">Enviar nombre</button>
+    </form>
+    <p>
+        Al enviarlo, el navegador agrega el dato a la dirección porque el método es GET.
+        No escribas información privada en este ejemplo.
+    </p>
+
+    <hr>
+    <h2>2. Campos de contacto y texto largo</h2>
+    <p>
+        El tipo <code>email</code> ofrece un control apropiado para una dirección de
+        correo. <code>textarea</code> sirve para mensajes de varias líneas.
+        <code>required</code> solicita que el navegador no deje enviar un campo vacío.
+    </p>
+    <form action="" method="get">
+        <p>
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+        </p>
+        <p>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="5" cols="40" required></textarea>
+        </p>
+        <button type="submit">Enviar consulta</button>
+    </form>
+
+    <hr>
+    <h2>3. Elegir una opción</h2>
+    <p>
+        Los botones de opción permiten seleccionar una opción de un grupo. Comparten
+        el mismo <code>name</code> y cada uno tiene un <code>value</code> distinto.
+        Una lista desplegable es útil cuando hay varias opciones.
+    </p>
+    <form action="" method="get">
+        <fieldset>
+            <legend>¿Cómo prefieres que te contactemos?</legend>
+            <label>
+                <input type="radio" name="contacto" value="correo" required>
+                Correo electrónico
+            </label>
+            <label>
+                <input type="radio" name="contacto" value="telefono">
+                Teléfono
+            </label>
+        </fieldset>
+        <p>
+            <label for="tema">Tema de la consulta:</label>
+            <select id="tema" name="tema">
+                <option value="">Selecciona un tema</option>
+                <option value="curso">Cursos</option>
+                <option value="soporte">Soporte</option>
+                <option value="otro">Otro</option>
+            </select>
+        </p>
+        <button type="submit">Continuar</button>
+    </form>
+
+    <hr>
+    <h2>4. Seleccionar varias opciones</h2>
+    <p>
+        Las casillas independientes permiten marcar varias opciones. Usa un
+        <code>name</code> para cada dato y un <code>value</code> que identifique
+        cada selección.
+    </p>
+    <form action="" method="get">
+        <fieldset>
+            <legend>¿Qué temas te interesan?</legend>
+            <label>
+                <input type="checkbox" name="interes_html" value="si">
+                HTML
+            </label>
+            <label>
+                <input type="checkbox" name="interes_css" value="si">
+                CSS
+            </label>
+            <label>
+                <input type="checkbox" name="interes_php" value="si">
+                PHP
+            </label>
+        </fieldset>
+        <button type="submit">Ver selección en la dirección</button>
+    </form>
+
+    <hr>
+    <h2>5. Números y fechas con restricciones</h2>
+    <p>
+        Los atributos <code>min</code>, <code>max</code> y <code>step</code>
+        orientan al navegador sobre los valores aceptados. Son ayudas para la
+        experiencia de uso, no una garantía de que los datos sean válidos.
+    </p>
+    <form action="" method="get">
+        <p>
+            <label for="cantidad">Cantidad (de 1 a 10):</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" max="10" step="1">
+        </p>
+        <p>
+            <label for="fecha">Fecha de inicio:</label>
+            <input type="date" id="fecha" name="fecha">
+        </p>
+        <button type="submit">Enviar datos</button>
+    </form>
+
+    <hr>
+    <h2>6. ¿Qué hace GET y qué hace POST?</h2>
+    <ul>
+        <li>
+            <strong>GET:</strong> envía los datos como parte de la dirección. Es
+            adecuado para búsquedas y filtros que se pueden volver a consultar o compartir.
+        </li>
+        <li>
+            <strong>POST:</strong> envía los datos en el cuerpo de la solicitud en
+            lugar de agregarlos a la dirección. Se usa habitualmente para enviar datos
+        </li>
+    </ul>
+    <p>
+        POST no cifra los datos ni los hace privados por sí solo; para proteger la
+        transmisión se necesita HTTPS. En ambos métodos, un servidor debe recibir y
+        procesar lo enviado. Este archivo es estático y todavía no incluye ese procesamiento.
+    </p>
+
+    <hr>
+    <h2>Prueba de aprendizaje</h2>
+    <ol>
+        <li>Completa el nombre en el primer formulario y envíalo; observa la dirección.</li>
+        <li>Intenta enviar el formulario de contacto sin completar sus campos.</li>
+        <li>Prueba una dirección de correo con formato incorrecto.</li>
+        <li>Selecciona una preferencia y varios temas; observa qué datos aparecen al enviar.</li>
+        <li>Abre este archivo en un editor y localiza <code>form</code>, <code>label</code>, <code>input</code> y <code>button</code>.</li>
+    </ol>
+</body>
+</html>
